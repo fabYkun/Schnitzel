@@ -37,14 +37,19 @@ public class ResourcesManager : MonoBehaviour
 
         for (int i = 0; i < (int)Emotion.MAX_EMOTIONS; i++)
         {
-            string filename = "Graphics/Textures/sprite_" + ((Emotion)i).ToString();
-            character_sprites[i] = Resources.Load<Sprite>(filename);
+            character_sprites[i] = Resources.Load<Sprite>("Graphics/Textures/sprite_" + ((Emotion)i).ToString());
+            //musics[i] = Resources.Load<Sprite>("Audio/track_" + ((Emotion)i).ToString());
         }
     }
 
     public Sprite getSpriteForEmotion(Emotion emotion)
     {
         return character_sprites[(int)emotion];
+    }
+
+    public AudioClip GetAudioClipForEmotion(Emotion emotion)
+    {
+        return musics[(int)emotion];
     }
 
     // Update is called once per frame

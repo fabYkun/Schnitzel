@@ -11,6 +11,8 @@ public class DialogManager : MonoBehaviour
     public Text displayed_speaker;
     public Image character;
 
+    public AudioSource music;
+
 
 
     private int current_pos = 0;
@@ -26,8 +28,10 @@ public class DialogManager : MonoBehaviour
         //GetComponent<Image>().sprite = current_dialog.background;
 
 
-        //Change sprite
+        //Change sprite and music
         character.sprite = ResourcesManager.instance.getSpriteForEmotion(current_dialog.emotion);
+        //music.clip = ResourcesManager.instance.GetAudioClipForEmotion(current_dialog.emotion);
+        
 
 
 
