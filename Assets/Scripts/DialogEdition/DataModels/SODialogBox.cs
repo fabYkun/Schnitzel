@@ -21,6 +21,7 @@ public enum                         Emotion
     Fear,
     Surprise,
     Sadness,
+    MAX_EMOTIONS
 }
 
 public enum                         Languages

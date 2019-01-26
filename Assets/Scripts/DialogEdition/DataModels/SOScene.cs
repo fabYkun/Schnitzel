@@ -19,7 +19,7 @@ public class SOScene : ScriptableObject
 {
     public string SceneTitle;
 
-    public List<Node> nodes = new List<Node>();
-    public List<Connection> connections = new List<Connection>();
-    public List<SODialogBox> dialogbox = new List<SODialogBox>();
+    //public List<Node> nodes = new List<Node>();
+    //public List<Connection> connections = new List<Connection>();
+    //public List<SODialogBox> dialogbox = new List<SODialogBox>();
 }

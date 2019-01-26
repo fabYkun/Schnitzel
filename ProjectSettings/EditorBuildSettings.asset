@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/DialogScene.unity
+    guid: f9d5dd4c9e4f9894fb8bdf66939a249a
   m_configObjects: {}
