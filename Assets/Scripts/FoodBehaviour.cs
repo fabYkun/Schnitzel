@@ -16,7 +16,7 @@ public class FoodBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        cookingManager = Camera.main.GetComponent<CookingManager>();
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class FoodBehaviour : MonoBehaviour
     {
         if(other.gameObject.tag == "Marmite" && !heldDown)
         {
-            cookingManager.current_salty++;
+            cookingManager.AddIngredient(spicy, sweet, salty);
             Destroy(gameObject);
         }
     }

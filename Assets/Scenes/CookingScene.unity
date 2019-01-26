@@ -160,9 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa552a2454159c4485599420f70a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sweet: 0
-  salty: 0
-  spicy: 0
+  sweet: 30
+  salty: 10
+  spicy: 20
   cookingManager: {fileID: 1824099279}
 --- !u!212 &214741426
 SpriteRenderer:
@@ -341,9 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29ee5f3f934bfe46a64dfbe64dc354a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_spicy: 10
-  current_salty: 100
-  current_sweet: 30
   salty_text: {fileID: 0}
   spicy_text: {fileID: 0}
   sweet_text: {fileID: 0}
@@ -911,10 +908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29ee5f3f934bfe46a64dfbe64dc354a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_spicy: 10
-  current_salty: 100
-  current_sweet: 30
-  salty_text: {fileID: 481559868}
+  salty_text: {fileID: 1197470043}
   spicy_text: {fileID: 1856933269}
   sweet_text: {fileID: 1197470043}
 --- !u!1 &1856933267
