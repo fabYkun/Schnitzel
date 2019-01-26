@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  speaker: 0
+  content: 'COUCOU LOL DIALOG 1
+
+    FAST MEGA TEXTE DE LINFINI POUR TESTE
+
+    dfrioghorehgoekgfokzgjhofhkfjoiekfjekkfjezkfjzpjfzkjfked'
+  emotion: 4
+  speed: 0
+  content_lang:
+  - 'COUCOU LOL DIALOG 1
+
+    FAST MEGA TEXTE DE LINFINI POUR TESTE
+
+    dfrioghorehgoekgfokzgjhofhkfjoiekfjekkfjezkfjzpjfzkjfked'
+  - 
+  - 
+  - 
+  next:
+  - name: COCECECEC
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 5e723add9ca2bde44834e0291a44df3a, type: 2}
+    reward: 0
