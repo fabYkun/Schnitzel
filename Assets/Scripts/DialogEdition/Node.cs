@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class Node
     public bool isSelected;
 
     public ConnectionPoint inPoint;
-    public ConnectionPoint outPoint;
+    public List<ConnectionPoint> outPoints = new List<ConnectionPoint>();
 
     public GUIStyle style;
     public GUIStyle defaultNodeStyle;
@@ -23,7 +24,7 @@ public class Node
         rect = new Rect(position.x, position.y, width, height);
         style = nodeStyle;
         inPoint = new ConnectionPoint(this, ConnectionPointType.In, inPointStyle, OnClickInPoint);
-        outPoint = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint);
+        outPoints.Add(new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint));
         defaultNodeStyle = nodeStyle;
         selectedNodeStyle = selectedStyle;
         OnRemoveNode = OnClickRemoveNode;
@@ -37,7 +38,10 @@ public class Node
     public void Draw()
     {
         inPoint.Draw();
-        outPoint.Draw();
+        foreach (ConnectionPoint connection in outPoints)
+        {
+            connection.Draw();
+        }
         GUI.Box(rect, title, style);
     }
 
@@ -45,6 +49,16 @@ public class Node
     {
         switch (e.type)
         {
+            case EventType.KeyDown:
+                if (e.keyCode == KeyCode.Delete)
+                {
+                    if (isSelected && OnRemoveNode != null)
+                    {
+                        OnRemoveNode(this);
+                        GUI.changed = true;
+                    }
+                }
+                break;
             case EventType.MouseDown:
                 if (e.button == 0)
                 {
@@ -55,7 +69,7 @@ public class Node
                         isSelected = true;
                         style = selectedNodeStyle;
                     }
-                    else
+                    else if (Event.current.modifiers != EventModifiers.Shift)
                     {
                         GUI.changed = true;
                         isSelected = false;
@@ -90,8 +104,13 @@ public class Node
     private void ProcessContextMenu()
     {
         GenericMenu genericMenu = new GenericMenu();
-        genericMenu.AddItem(new GUIContent("Remove node"), false, OnClickRemoveNode);
+        genericMenu.AddItem(new GUIContent("Add choice"), false, OnClickAddChoice);
         genericMenu.ShowAsContext();
+    }
+
+    private void OnClickAddChoice()
+    {
+        rect.height += 50;
     }
 
     private void OnClickRemoveNode()

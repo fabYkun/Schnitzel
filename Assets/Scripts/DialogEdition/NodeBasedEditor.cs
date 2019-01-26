@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class NodeBasedEditor : EditorWindow
 {
-    private List<Node> nodes;
-    private List<Connection> connections;
+    public List<Node> nodes;
+    public List<Connection> connections;
 
     private GUIStyle nodeStyle;
     private GUIStyle selectedNodeStyle;
@@ -17,6 +17,11 @@ public class NodeBasedEditor : EditorWindow
 
     private Vector2 offset;
     private Vector2 drag;
+
+    public static NodeBasedEditor instance
+    {
+        get { return GetWindow<NodeBasedEditor>(); }
+    }
 
     [MenuItem("Window/Node Based Editor")]
     private static void OpenWindow()
@@ -58,7 +63,6 @@ public class NodeBasedEditor : EditorWindow
 
         ProcessNodeEvents(Event.current);
         ProcessEvents(Event.current);
-
         if (GUI.changed) Repaint();
     }
 
@@ -261,7 +265,7 @@ public class NodeBasedEditor : EditorWindow
 
             for (int i = 0; i < connections.Count; i++)
             {
-                if (connections[i].inPoint == node.inPoint || connections[i].outPoint == node.outPoint)
+                if (connections[i].inPoint == node.inPoint || node.outPoints.IndexOf(connections[i].outPoint) >= 0)
                 {
                     connectionsToRemove.Add(connections[i]);
                 }
