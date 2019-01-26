@@ -20,6 +20,7 @@ public enum                         Emotion
     Fear,
     Surprise,
     Sadness,
+    MAX_EMOTIONS    
 }
 
 public enum                         Languages
@@ -39,9 +40,9 @@ public enum                         Characters
 
 public enum                         TypingSpeed
 {
-    Very_Slow = 10,
-    Slow = 5,
-    Medium = 2,
+    Very_Slow = 20,
+    Slow = 10,
+    Medium = 5,
     Fast = 0
 }
 
