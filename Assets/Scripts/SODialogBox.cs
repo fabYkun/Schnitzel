@@ -37,6 +37,14 @@ public enum                         Characters
     Player
 }
 
+public enum                         TypingSpeed
+{
+    Very_Slow = 10,
+    Slow = 5,
+    Medium = 2,
+    Fast = 0
+}
+
 /// <summary>
 /// A text that will be displayed as is. 
 /// The text is rich as defined by Unity standards, it is displayed if the prerequisites are met. 
@@ -52,6 +60,8 @@ public class                        SODialogBox : ScriptableObject
     public string                   content;
     /// <summary>The emotion the character shows in this dialogbox</summary>
     public Emotion                  emotion;
+
+    public TypingSpeed              speed;
     public string[]                 content_lang = new string[(int) Languages.MAX_LANGUAGES];
     /// <summary>Tree of choices left to the player in the end</summary>
     public Choice[]                 next;

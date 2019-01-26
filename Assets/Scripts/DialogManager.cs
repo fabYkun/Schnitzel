@@ -54,13 +54,22 @@ public class DialogManager : MonoBehaviour
         RefreshCanvas();
     }
 
+    IEnumerator WriteText()
+    {
+        while (displayed_text.text != current_dialog.content)
+        { 
+            displayed_text.text += current_dialog.content[current_pos++];
+            yield return new WaitForSeconds((int)current_dialog.speed/(float)10.0f);
+         }
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         if(displayed_text.text != current_dialog.content)
         {
-            displayed_text.text += current_dialog.content[current_pos++];
+            StartCoroutine(WriteText());
         }
         else if(Input.GetKeyDown(KeyCode.Return) && current_dialog.next.Length == 1)
         {
