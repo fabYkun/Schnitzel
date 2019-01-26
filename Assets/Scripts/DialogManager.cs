@@ -9,18 +9,33 @@ public class DialogManager : MonoBehaviour
     public SODialogBox current_dialog;
     public Text displayed_text;
     public Text displayed_speaker;
+    public Image character;
+
+    public AudioSource music;
+
+
 
     private int current_pos = 0;
 
 
     void RefreshCanvas()
     {
+        //Reset text
         displayed_speaker.text = current_dialog.speaker.ToString();
         displayed_text.text = "";
         current_pos = 0;
 
         //GetComponent<Image>().sprite = current_dialog.background;
 
+
+        //Change sprite and music
+        character.sprite = ResourcesManager.instance.getSpriteForEmotion(current_dialog.emotion);
+        //music.clip = ResourcesManager.instance.GetAudioClipForEmotion(current_dialog.emotion);
+        
+
+
+
+        //Choice management
         Button[] choice_buttons = GetComponentsInChildren<Button>(true);
         for(int i = 0; i  < choice_buttons.Length; i++)
         {
