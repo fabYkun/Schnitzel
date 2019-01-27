@@ -63,6 +63,7 @@ public class                SOSceneEditor : Editor
             scene.root = NodeBasedEditor.instance.entryNode.dialogBox;
             SaveNodes(scene.root);
             EditorUtility.SetDirty(scene);
+            AssetDatabase.Refresh();
             AssetDatabase.SaveAssets();
         }
     }
