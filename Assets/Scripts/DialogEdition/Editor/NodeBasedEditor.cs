@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using System.IO;
 
 public class NodeBasedEditor : EditorWindow
 {
     public List<Node> nodes;
+    public Node entryNode;
     public List<Connection> connections;
 
     private GUIStyle nodeStyle;
+    private GUIStyle entryNodeStyle;
     private GUIStyle selectedNodeStyle;
     private GUIStyle inPointStyle;
     private GUIStyle outPointStyle;
@@ -23,6 +26,8 @@ public class NodeBasedEditor : EditorWindow
         get { return GetWindow<NodeBasedEditor>(); }
     }
 
+    public SOScene scene = null;
+
     [MenuItem("Window/Node Based Editor")]
     private static void OpenWindow()
     {
@@ -35,6 +40,10 @@ public class NodeBasedEditor : EditorWindow
         nodeStyle = new GUIStyle();
         nodeStyle.normal.background = EditorGUIUtility.Load("builtin skins/darkskin/images/node1.png") as Texture2D;
         nodeStyle.border = new RectOffset(12, 12, 12, 12);
+
+        entryNodeStyle = new GUIStyle();
+        entryNodeStyle.normal.background = EditorGUIUtility.Load("builtin skins/lightskin/images/node1.png") as Texture2D;
+        entryNodeStyle.border = new RectOffset(12, 12, 12, 12);
 
         selectedNodeStyle = new GUIStyle();
         selectedNodeStyle.normal.background = EditorGUIUtility.Load("builtin skins/darkskin/images/node1 on.png") as Texture2D;
@@ -60,6 +69,9 @@ public class NodeBasedEditor : EditorWindow
         DrawConnections();
 
         DrawConnectionLine(Event.current);
+
+        string sceneTitle = scene ? "Scene: [" + scene.SceneTitle + "]" : "No scene loaded !!";
+        GUI.Label(new Rect(40.0f, 10.0f, 100.0f, 100.0f), sceneTitle, EditorStyles.boldLabel);
 
         ProcessNodeEvents(Event.current);
         ProcessEvents(Event.current);
@@ -109,7 +121,7 @@ public class NodeBasedEditor : EditorWindow
             for (int i = 0; i < connections.Count; i++)
             {
                 connections[i].Draw();
-            } 
+            }
         }
     }
 
@@ -129,14 +141,14 @@ public class NodeBasedEditor : EditorWindow
                 {
                     ProcessContextMenu(e.mousePosition);
                 }
-            break;
+                break;
 
             case EventType.MouseDrag:
                 if (e.button == 0)
                 {
                     OnDrag(e.delta);
                 }
-            break;
+                break;
         }
     }
 
@@ -192,7 +204,7 @@ public class NodeBasedEditor : EditorWindow
     private void ProcessContextMenu(Vector2 mousePosition)
     {
         GenericMenu genericMenu = new GenericMenu();
-        genericMenu.AddItem(new GUIContent("Add node"), false, () => OnClickAddNode(mousePosition)); 
+        genericMenu.AddItem(new GUIContent("Add node"), false, () => OnClickAddNode(mousePosition));
         genericMenu.ShowAsContext();
     }
 
@@ -211,14 +223,65 @@ public class NodeBasedEditor : EditorWindow
         GUI.changed = true;
     }
 
-    private void OnClickAddNode(Vector2 mousePosition)
+    public void SetEntryNode(Node node)
+    {
+        if (entryNode != null)
+            entryNode.isEntryPoint = false;
+        entryNode = node;
+        entryNode.isEntryPoint = true;
+    }
+
+    public Node ImportNode(SODialogBox dialogBox)
     {
         if (nodes == null)
         {
             nodes = new List<Node>();
         }
+        Node node = new Node(new Vector2(dialogBox.x, dialogBox.y), 200, 50, nodeStyle, entryNodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode);
+        nodes.Add(node);
+        if (nodes.Count == 1)
+            SetEntryNode(node);
+        node.dialogBox = dialogBox;
+        node.dialogBox.x = node.rect.x;
+        node.dialogBox.y = node.rect.y;
+        if (dialogBox.next != null)
+        {
+            for (int i = 0; i < dialogBox.next.Length; ++i)
+            {
+                node.outPoints.Add(new ConnectionPoint(node, ConnectionPointType.Out, outPointStyle, OnClickOutPoint));
+            }
+        }
+        return node;
+    }
 
-        nodes.Add(new Node(mousePosition, 200, 50, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode));
+    public Node AddNode(float x, float y)
+    {
+        SODialogBox asset = ScriptableObject.CreateInstance<SODialogBox>();
+        string path = AssetDatabase.GetAssetPath(scene.GetInstanceID());
+
+        path = path.Replace(Path.GetFileName(AssetDatabase.GetAssetPath(scene.GetInstanceID())), "");
+        path += "DialogBoxes";
+        asset.Awake();
+        string pathname = AssetDatabase.GenerateUniqueAssetPath(path + "/DB" + asset.id + ".asset");
+        AssetDatabase.CreateAsset(asset, pathname);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        EditorUtility.FocusProjectWindow();
+        Selection.activeObject = asset;
+        asset.x = x;
+        asset.y = y;
+        return ImportNode(asset);
+    }
+
+    private void OnClickAddNode(Vector2 mousePosition)
+    {
+        if (!scene)
+        {
+            EditorUtility.DisplayDialog("Scene missing !",
+                "You cannot add nodes without loading a scene", "OK");
+            return;
+        }
+        AddNode(mousePosition.x, mousePosition.y);
     }
 
     private void OnClickInPoint(ConnectionPoint inPoint)
@@ -230,7 +293,7 @@ public class NodeBasedEditor : EditorWindow
             if (selectedOutPoint.node != selectedInPoint.node)
             {
                 CreateConnection();
-                ClearConnectionSelection(); 
+                ClearConnectionSelection();
             }
             else
             {
@@ -287,6 +350,24 @@ public class NodeBasedEditor : EditorWindow
         connections.Remove(connection);
     }
 
+    /* needs to be worked */
+    public void AddConnection(Node give, Node receive)
+    {
+        if (connections == null)
+        {
+            connections = new List<Connection>();
+        }
+
+        for (int i = 0; i < give.dialogBox.next.Length; ++i)
+        {
+            if (give.dialogBox.next[i].dialogBox == receive.dialogBox)
+            {
+                connections.Add(new Connection(receive.inPoint, give.outPoints[i], OnClickRemoveConnection));
+                return;
+            }
+        }
+    }
+
     private void CreateConnection()
     {
         if (connections == null)
@@ -295,11 +376,18 @@ public class NodeBasedEditor : EditorWindow
         }
 
         connections.Add(new Connection(selectedInPoint, selectedOutPoint, OnClickRemoveConnection));
+        selectedOutPoint.node.dialogBox.next[selectedOutPoint.node.outPoints.IndexOf(selectedOutPoint)].dialogBox = selectedInPoint.node.dialogBox;
     }
 
     private void ClearConnectionSelection()
     {
         selectedInPoint = null;
         selectedOutPoint = null;
+    }
+
+    public void ClearInstance()
+    {
+        if (nodes != null) nodes.Clear();
+        if (connections != null) connections.Clear();
     }
 }

@@ -26,7 +26,10 @@ public class ConnectionPoint
 
     public void Draw()
     {
-        rect.y = node.rect.y + (node.rect.height * 0.5f) - rect.height * 0.5f;
+        float relativePosition = node.outPoints.IndexOf(this);
+        if (relativePosition < 0) relativePosition = node.rect.height * 0.5f;
+        else relativePosition = (node.rect.height / (node.outPoints.Count + 1)) * (node.outPoints.IndexOf(this) + 1);
+        rect.y = node.rect.y + relativePosition - rect.height * 0.5f;
 
         switch (type)
         {

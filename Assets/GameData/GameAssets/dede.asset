@@ -10,28 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
-  m_Name: Test
+  m_Name: dede
   m_EditorClassIdentifier: 
-  id: 5C4C5B73-3353CB4F
+  id: 5C4C5C81-205017AD
   speaker: 0
-  content: 'COUCOU LOL DIALOG 1
-
-    FAST MEGA TEXTE DE LINFINI POUR TESTE
-
-    dfrioghorehgoekgfokzgjhofhkfjoiekfjekkfjezkfjzpjfzkjfked'
-  emotion: 4
+  content: 
+  emotion: 0
   speed: 0
   content_lang:
-  - 'COUCOU LOL DIALOG 1
-
-    FAST MEGA TEXTE DE LINFINI POUR TESTE
-
-    dfrioghorehgoekgfokzgjhofhkfjoiekfjekkfjezkfjzpjfzkjfked'
+  - 
   - 
   - 
   - 
   next:
-  - name: dede
+  - name: 
     successStory: 0
-    dialogBox: {fileID: 11400000, guid: 5e723add9ca2bde44834e0291a44df3a, type: 2}
+    dialogBox: {fileID: 0}
     reward: 0

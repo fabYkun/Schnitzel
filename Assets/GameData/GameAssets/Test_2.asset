@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
   m_Name: Test_2
   m_EditorClassIdentifier: 
+  id: 5C4C5B73-3353CB4F
   speaker: 0
   content: "CHOISIS\n\nCeci est un long texte pour tester la\n vitesse de d\xE9filement
     lol coucou mdr blablazerty \n<i>test rich text</i>\u3000\u6F22\u5B57\u306E\u30C6\u30B9\u30C8"
@@ -24,9 +25,13 @@ MonoBehaviour:
   - 
   - 
   next:
-  - name: Hola
+  - name: dede
     successStory: 0
     dialogBox: {fileID: 11400000, guid: ed84589c996c94044aac7791a1c6f976, type: 2}
+    reward: 0
+  - name: blablasuccess
+    successStory: 1
+    dialogBox: {fileID: 11400000, guid: fd183eb2afdeb774b99e72fdc28dc059, type: 2}
     reward: 0
   - name: blabla
     successStory: 0
