@@ -30,7 +30,6 @@ public class                SOSceneEditor : Editor
     private void            SaveNodes(SODialogBox data)
     {
         if (loadedNodes.ContainsKey(data.id)) return;
-        NodeBasedEditor.instance.ImportNode(data);
         EditorUtility.SetDirty(data);
         loadedNodes.Add(data.id, null);
         if (data.next == null) return;
