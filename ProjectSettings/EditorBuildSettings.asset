@@ -8,7 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 30b1db7d743e5da4e8af579c8888fe26
+  - enabled: 1
     path: Assets/Scenes/DialogScene.unity
     guid: f9d5dd4c9e4f9894fb8bdf66939a249a
+  - enabled: 1
+    path: Assets/Scenes/CookingScene.unity
+    guid: dff98fca4fbd6264bbeab79a44c5a664
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 5133d33c0c4a2bb42beb306eaeccf5e9
   m_configObjects: {}
