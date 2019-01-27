@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 776094953}
   - component: {fileID: 776094952}
   - component: {fileID: 776094951}
+  - component: {fileID: 776094954}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -694,6 +695,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &776094954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776094949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107ac8f1ef918894e87f95d0ecd75c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &802610808
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +743,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -147.3, y: 90.1}
+  m_AnchoredPosition: {x: -141, y: 63}
   m_SizeDelta: {x: 149.16, y: 40.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802610810
@@ -1126,7 +1139,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1233510874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: e29ee5f3f934bfe46a64dfbe64dc354a, type: 3}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1233510874
@@ -1273,7 +1297,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.73, y: 3.04}
+  m_Size: {x: 5.79, y: 4}
   m_EdgeRadius: 0
 --- !u!114 &1325210861
 MonoBehaviour:
@@ -1710,6 +1734,7 @@ MonoBehaviour:
   salty_text: {fileID: 481559868}
   spicy_text: {fileID: 1856933269}
   sweet_text: {fileID: 1197470043}
+  ingredients_list: {fileID: 9845583}
   taste_effect: {fileID: 1836286885}
   transitionTime: 1
 --- !u!1 &1832558005
@@ -2006,7 +2031,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1914348949}
   - component: {fileID: 1914348948}
-  - component: {fileID: 1914348950}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -2076,18 +2100,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1914348950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914348947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc71463cd4e2c6a418257fbfc06e2d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2143666843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,5 +2266,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 719664432897320071, guid: 970afe3592379944882873fab881b2b5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 970afe3592379944882873fab881b2b5, type: 3}
