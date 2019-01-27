@@ -27,6 +27,22 @@ public class                SOSceneEditor : Editor
         return newNode;
     }
 
+    private void            SaveNodes(SODialogBox data)
+    {
+        if (loadedNodes.ContainsKey(data.id)) return;
+        EditorUtility.SetDirty(data);
+        loadedNodes.Add(data.id, null);
+        if (data.next == null) return;
+
+        for (int i = 0; i < data.next.Length; ++i)
+        {
+            if (data.next[i].dialogBox)
+            {
+                SaveNodes(data.next[i].dialogBox);
+            }
+        }
+    }
+
     public override void    OnInspectorGUI()
     {
         SOScene scene = target as SOScene;
@@ -34,6 +50,7 @@ public class                SOSceneEditor : Editor
         DrawDefaultInspector();
         if (GUILayout.Button("Load"))
         {
+            AssetDatabase.Refresh();
             loadedNodes.Clear();
             NodeBasedEditor.instance.scene = scene;
             NodeBasedEditor.instance.ClearInstance();
@@ -42,8 +59,11 @@ public class                SOSceneEditor : Editor
         }
         if (GUILayout.Button("Save"))
         {
+            loadedNodes.Clear();
             scene.root = NodeBasedEditor.instance.entryNode.dialogBox;
+            SaveNodes(scene.root);
             EditorUtility.SetDirty(scene);
+            AssetDatabase.Refresh();
             AssetDatabase.SaveAssets();
         }
     }

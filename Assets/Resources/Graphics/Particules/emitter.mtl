@@ -1,0 +1,12 @@
+# Blender MTL File: 'kitchen_layout2.blend'
+# Material Count: 1
+
+newmtl Material.028
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.336017 0.336017 0.336017
+Ks 0.500000 0.500000 0.500000
+Ke 0.840042 0.840042 0.840042
+Ni 1.000000
+d 1.000000
+illum 2

@@ -80,14 +80,15 @@ public class DialogManager : MonoBehaviour
                 if (choice.successStory == has_success_story)
                 {
                     Button b = choice_buttons[i];
-                    b.gameObject.SetActive(true);
                     b.name = choice.name;
                     b.GetComponentInChildren<Text>().text = choice.name;
+
                     if (b.GetComponentInChildren<Text>().cachedTextGenerator.lineCount > 1)
                         b.image.sprite = box_large;
                     else
                         b.image.sprite = box_small;
 
+                    b.gameObject.SetActive(true);
                     b.onClick.AddListener(delegate { next_dialog = choice.dialogBox; go_to_next = true; });// changeDialog(choice.dialogBox);});
                 }
             }
