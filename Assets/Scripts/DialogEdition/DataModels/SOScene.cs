@@ -7,6 +7,5 @@ using UnityEngine;
 public class SOScene : ScriptableObject
 {
     public string SceneTitle;
-    [HideInInspector]
     public SODialogBox root;
 }
