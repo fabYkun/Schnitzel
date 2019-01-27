@@ -35,12 +35,9 @@ public class DialogManager : MonoBehaviour
             for (int i = 0; i < current_dialog.next.Length && !next_dialog; i++)
             {
                 Choice c = current_dialog.next[i];
-                if (c.successStory)
+                if (c.successStory = has_success_story && string.IsNullOrEmpty(c.name))
                 {
-                    if (has_success_story && string.IsNullOrEmpty(c.name))
-                    {
-                        next_dialog = c.dialogBox;
-                    }
+                    next_dialog = c.dialogBox;
                 }
             }
         }
