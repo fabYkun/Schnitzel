@@ -7,6 +7,7 @@ using System;
 public class StepData : ScriptableObject
 {
     public Thematics thematic;
+    public AudioClip audioclip;
 
     public enum stepType
     {

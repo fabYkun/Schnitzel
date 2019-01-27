@@ -45,7 +45,10 @@ public class            Gamemachine : MonoBehaviour
     private Image       transition;
     [SerializeField]
     private AnimationCurve curve;
-    
+
+    public AudioClip audioClip;
+    public AudioSource audioSource;
+
     public CursorDisplay cursorDisplay;
 
     public static Gamemachine instance;
@@ -106,13 +109,32 @@ public class            Gamemachine : MonoBehaviour
         StartCoroutine(LoadSceneTransition(3));
     }
 
+    IEnumerator         LoadNewSong()
+    {
+        float time = 0;
+        float speed = 1.0f;
+
+        while (time < 1)
+        {
+            time += Time.deltaTime * speed;
+            audioSource.volume = Mathf.Lerp(1.0f, 0.0f, curve.Evaluate(time));
+            yield return null;
+        }
+        audioSource.clip = audioClip;
+        while (time > 0)
+        {
+            time -= Time.deltaTime * speed;
+            audioSource.volume = Mathf.Lerp(1.0f, 0.0f, curve.Evaluate(time));
+            yield return null;
+        }
+    }
+
     public void         NextScene(bool success_story = false)
     {
         if(steps[current_step].type == StepData.stepType.Cooking && success_story)
         {
             daily_scores[current_day] = 1;
         }
-
 
         if (next_step >= steps.Count)
         {
@@ -127,6 +149,11 @@ public class            Gamemachine : MonoBehaviour
             LoadKitchen(steps[next_step]);
         }
         current_step = next_step;
+        if (audioClip != steps[current_step].audioclip)
+        {
+            audioClip = steps[current_step].audioclip;
+            StartCoroutine(LoadNewSong());
+        }
         ++next_step;
     }
 
