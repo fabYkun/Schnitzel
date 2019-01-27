@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Marmite
   - Food
+  - Taste
   layers:
   - Default
   - TransparentFX

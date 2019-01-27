@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D2CD2-15DB59A7
+  m_EditorClassIdentifier: 
+  id: 5C4D2CD2-15DB59A7
+  speaker: 1
+  content: It's sad how some married people suddenly have no time for friends. You'll
+    be okay, Sacha. You'll meet other people soon.
+  emotion: 0
+  speed: 2
+  content_lang:
+  - It's sad how some married people suddenly have no time for friends. You'll be
+    okay, Sacha. You'll meet other people soon.
+  - 
+  - 
+  - 
+  next:
+  - name: 
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 4168de557c27ddb4085dd0ba2e18d331, type: 2}
+    reward: 0
+  x: 436
+  y: 201

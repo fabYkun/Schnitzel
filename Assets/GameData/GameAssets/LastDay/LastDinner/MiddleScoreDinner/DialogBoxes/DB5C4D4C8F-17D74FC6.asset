@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D4C8F-17D74FC6
+  m_EditorClassIdentifier: 
+  id: 5C4D4C8F-17D74FC6
+  speaker: 0
+  content: That's a bit much for me to eat. I wish I had less food.
+  emotion: 5
+  speed: 2
+  content_lang:
+  - That's a bit much for me to eat. I wish I had less food.
+  - 
+  - 
+  - 
+  next:
+  - name: 
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: e95c64ac29faefe4a909d9ba45947039, type: 2}
+    reward: 0
+  x: 513
+  y: 198

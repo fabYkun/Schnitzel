@@ -8,7 +8,11 @@ public class ResourcesManager : MonoBehaviour
     public static ResourcesManager instance = null;
 
     public Sprite[] character_sprites = new Sprite[(int)Emotion.MAX_EMOTIONS];
-    public AudioClip[] musics = new AudioClip[(int)Emotion.MAX_EMOTIONS];
+    [SerializeField]
+    private AudioClip music_success;
+    [SerializeField]
+    private AudioClip music_failure;
+    public AudioSource audio_source;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +42,11 @@ public class ResourcesManager : MonoBehaviour
         for (int i = 0; i < (int)Emotion.MAX_EMOTIONS; i++)
         {
             character_sprites[i] = Resources.Load<Sprite>("Graphics/Textures/sprite_" + ((Emotion)i).ToString());
-            //musics[i] = Resources.Load<Sprite>("Audio/track_" + ((Emotion)i).ToString());
         }
+
+        // TO DO: link with success
+        audio_source.clip = music_success;
+        audio_source.Play();
     }
 
     public Sprite getSpriteForEmotion(Emotion emotion)
@@ -49,7 +56,7 @@ public class ResourcesManager : MonoBehaviour
 
     public AudioClip GetAudioClipForEmotion(Emotion emotion)
     {
-        return musics[(int)emotion];
+        return audio_source.clip;
     }
 
     // Update is called once per frame

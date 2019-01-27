@@ -14,14 +14,20 @@ public class CookingManager : MonoBehaviour
     public Text spicy_text;
     public Text sweet_text;
 
+    public GameObject ingredients_list;
+    private GameObject ingredients_list_backup;
+
     public GameObject taste_effect;
 
-    public 
+    public float transitionTime = 1.0f;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        ingredients_list_backup = Instantiate(ingredients_list);
+        ingredients_list_backup.SetActive(false);
         taste_effect.GetComponent<CanvasGroup>().alpha = 0;
         RectTransform rt = (RectTransform)taste_effect.transform.Find("Synesthesia");
         rt.sizeDelta = new Vector2(0, 0);
@@ -51,6 +57,22 @@ public class CookingManager : MonoBehaviour
 
     }
 
+
+    public void Reset()
+    {
+        Destroy(ingredients_list);
+        ingredients_list = Instantiate(ingredients_list_backup);
+        ingredients_list.SetActive(true);
+
+        current_spicy = 0;
+        current_salty = 0;
+        current_sweet = 0;
+
+        salty_text.text = current_salty.ToString();
+        sweet_text.text = current_sweet.ToString();
+        spicy_text.text = current_spicy.ToString();
+    }
+
     IEnumerator FadeInTaste()
     {
         for (float f = 0; f < 1.0f; f += 0.01f)
@@ -59,9 +81,9 @@ public class CookingManager : MonoBehaviour
             rt.sizeDelta = new Vector2(f*1000, f*1000);
             taste_effect.GetComponent<CanvasGroup>().alpha = f;
 
-            yield return null;
+            yield return new WaitForSeconds(transitionTime/100.0f);
         }
-        yield return null;
+        yield return new WaitForSeconds(transitionTime / 100.0f);
     }
 
     IEnumerator FadeOutTaste()
@@ -72,11 +94,16 @@ public class CookingManager : MonoBehaviour
             rt.sizeDelta = new Vector2(f * 1000, f * 1000);
             taste_effect.GetComponent<CanvasGroup>().alpha = f;
 
-            yield return null;
+            yield return new WaitForSeconds(transitionTime / 100.0f);
         }
 
         taste_effect.SetActive(false);
-        yield return null;
+        yield return new WaitForSeconds(transitionTime / 100.0f);
+    }
+
+    public void DisplayTaste()
+    {
+        DisplayTaste(current_spicy, current_sweet, current_salty);
     }
 
     public void DisplayTaste(int spicy, int sweet, int salty)

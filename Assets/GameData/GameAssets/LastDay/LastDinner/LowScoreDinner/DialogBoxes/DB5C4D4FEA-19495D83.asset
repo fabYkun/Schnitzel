@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D4FEA-19495D83
+  m_EditorClassIdentifier: 
+  id: 5C4D4FEA-19495D83
+  speaker: 1
+  content: I'm sorry I wasn't much help, come back whenever you need. There will always
+    be a homecooked meal ready for you here.
+  emotion: 5
+  speed: 2
+  content_lang:
+  - I'm sorry I wasn't much help, come back whenever you need. There will always be
+    a homecooked meal ready for you here.
+  - 
+  - 
+  - 
+  next: []
+  x: 941
+  y: 140

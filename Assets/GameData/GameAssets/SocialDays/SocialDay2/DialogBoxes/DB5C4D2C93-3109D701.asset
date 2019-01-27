@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D2C93-3109D701
+  m_EditorClassIdentifier: 
+  id: 5C4D2C93-3109D701
+  speaker: 0
+  content: 'They texted me about their cat. Apparently, their cat would love to meet
+    me. I think it might be a date. '
+  emotion: 1
+  speed: 2
+  content_lang:
+  - 'They texted me about their cat. Apparently, their cat would love to meet me.
+    I think it might be a date. '
+  - 
+  - 
+  - 
+  next:
+  - name: 
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: d9c5dfdc23df2494aa53137a04bd8aaf, type: 2}
+    reward: 0
+  x: 189
+  y: 73

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour
 {
 
-    public SODialogBox current_dialog;
+    public SOScene scene;
+    private SODialogBox current_dialog;
     public Text displayed_text;
     public Text displayed_speaker;
     public Image character;
@@ -21,7 +22,7 @@ public class DialogManager : MonoBehaviour
     private int current_pos = 0;
     private SODialogBox next_dialog = null;
     private bool go_to_next = false;
-    private bool has_success_story = false;
+    public bool has_success_story = false;
 
 
     void RefreshCanvas()
@@ -38,7 +39,7 @@ public class DialogManager : MonoBehaviour
             for (int i = 0; i < current_dialog.next.Length && !next_dialog; i++)
             {
                 Choice c = current_dialog.next[i];
-                if (c.successStory = has_success_story && string.IsNullOrEmpty(c.name))
+                if (c.successStory == has_success_story && string.IsNullOrEmpty(c.name))
                 {
                     next_dialog = c.dialogBox;
                 }
@@ -109,6 +110,7 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        current_dialog = scene.root;
         RefreshCanvas();
     }
 
@@ -125,7 +127,7 @@ public class DialogManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetMouseButtonDown(0))
             go_to_next = true;
 
 

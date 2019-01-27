@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5C4C915C-C92CAD5
   speaker: 0
-  content: Compliments sur le repas.
+  content: Compliments on the food.
   emotion: 1
   speed: 2
   content_lang:
-  - Compliments sur le repas.
+  - Compliments on the food.
   - 
   - 
   - 
@@ -27,5 +27,5 @@ MonoBehaviour:
     successStory: 0
     dialogBox: {fileID: 11400000, guid: 26a100fc0baf7254b8c7754536a5f608, type: 2}
     reward: 0
-  x: -440
-  y: 8
+  x: 593
+  y: 227
