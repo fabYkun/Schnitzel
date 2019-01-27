@@ -27,6 +27,23 @@ public class                SOSceneEditor : Editor
         return newNode;
     }
 
+    private void            SaveNodes(SODialogBox data)
+    {
+        if (loadedNodes.ContainsKey(data.id)) return;
+        NodeBasedEditor.instance.ImportNode(data);
+        EditorUtility.SetDirty(data);
+        loadedNodes.Add(data.id, null);
+        if (data.next == null) return;
+
+        for (int i = 0; i < data.next.Length; ++i)
+        {
+            if (data.next[i].dialogBox)
+            {
+                SaveNodes(data.next[i].dialogBox);
+            }
+        }
+    }
+
     public override void    OnInspectorGUI()
     {
         SOScene scene = target as SOScene;
@@ -42,7 +59,9 @@ public class                SOSceneEditor : Editor
         }
         if (GUILayout.Button("Save"))
         {
+            loadedNodes.Clear();
             scene.root = NodeBasedEditor.instance.entryNode.dialogBox;
+            SaveNodes(scene.root);
             EditorUtility.SetDirty(scene);
             AssetDatabase.SaveAssets();
         }
