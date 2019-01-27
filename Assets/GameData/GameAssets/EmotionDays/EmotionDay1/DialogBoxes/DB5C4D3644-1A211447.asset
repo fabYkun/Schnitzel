@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D3644-1A211447
+  m_EditorClassIdentifier: 
+  id: 5C4D3644-1A211447
+  speaker: 0
+  content: I feel so tired all the time. I'm not doing much but I can't help but feel
+    like I can't leave my room all day.
+  emotion: 5
+  speed: 2
+  content_lang:
+  - I feel so tired all the time. I'm not doing much but I can't help but feel like
+    I can't leave my room all day.
+  - 
+  - 
+  - 
+  next:
+  - name: What's wrong?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 754920ee77e6f0d42ae7f7fa3571ab27, type: 2}
+    reward: 0
+  - name: How long have you felt this way?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: a6d930c02d1fd0d40afc85d1b10038c3, type: 2}
+    reward: 0
+  x: 880
+  y: 172

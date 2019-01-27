@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
-  m_Name: DB5C4C919D-1ABBFB80
+  m_Name: DB5C4D3F3C-1C57817D
   m_EditorClassIdentifier: 
-  id: 5C4C919D-1ABBFB80
-  speaker: 0
-  content: Critiques sur le repas.
-  emotion: 5
-  speed: 5
+  id: 5C4D3F3C-1C57817D
+  speaker: 1
+  content: I'm glad I can help, Sacha. I know you'd do the same for me.
+  emotion: 0
+  speed: 2
   content_lang:
-  - Critiques sur le repas.
+  - I'm glad I can help, Sacha. I know you'd do the same for me.
   - 
   - 
   - 
   next:
   - name: 
     successStory: 0
-    dialogBox: {fileID: 11400000, guid: 8b52dca4af0c1f74882b379612958f76, type: 2}
+    dialogBox: {fileID: 11400000, guid: 60ecf017cdd2fd7408fad8842c81f2c6, type: 2}
     reward: 0
-  x: -439
-  y: 105
+  x: 1396
+  y: 102

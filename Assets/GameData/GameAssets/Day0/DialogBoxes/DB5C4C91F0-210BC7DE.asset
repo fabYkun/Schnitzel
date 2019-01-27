@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5C4C91F0-210BC7DE
   speaker: 1
-  content: Remerciements.
+  content: My pleasure.
   emotion: 1
   speed: 2
   content_lang:
-  - Remerciements.
+  - My pleasure.
   - 
   - 
   - 
@@ -27,5 +27,5 @@ MonoBehaviour:
     successStory: 0
     dialogBox: {fileID: 11400000, guid: daeabc1402eec3842849809594911fe3, type: 2}
     reward: 0
-  x: -156
-  y: 2
+  x: 877
+  y: 227

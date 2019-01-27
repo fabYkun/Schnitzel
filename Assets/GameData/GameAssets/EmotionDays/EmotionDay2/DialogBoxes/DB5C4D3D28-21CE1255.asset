@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D3D28-21CE1255
+  m_EditorClassIdentifier: 
+  id: 5C4D3D28-21CE1255
+  speaker: 0
+  content: I feel so sad. Everything just looks grey to me.
+  emotion: 5
+  speed: 2
+  content_lang:
+  - I feel so sad. Everything just looks grey to me.
+  - 
+  - 
+  - 
+  next:
+  - name: Oh no. What's wrong?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: d0c6611155b40964a93e437e5c8d58ed, type: 2}
+    reward: 0
+  - name: How long has it felt this way?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: a6eb97282ad0ad041a1a2114d472ed47, type: 2}
+    reward: 0
+  x: 897
+  y: 208

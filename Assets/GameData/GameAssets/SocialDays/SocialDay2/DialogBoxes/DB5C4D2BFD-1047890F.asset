@@ -10,26 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
-  m_Name: DB5C4C912E-3B136C8E
+  m_Name: DB5C4D2BFD-1047890F
   m_EditorClassIdentifier: 
-  id: 5C4C912E-3B136C8E
+  id: 5C4D2BFD-1047890F
   speaker: 0
-  content: 
-  emotion: 0
-  speed: 0
+  content: Compliments on the food.
+  emotion: 1
+  speed: 2
   content_lang:
-  - 
+  - Compliments on the food.
   - 
   - 
   - 
   next:
   - name: 
-    successStory: 1
-    dialogBox: {fileID: 11400000, guid: fb7c354208016114a8aa16c1b1a779c3, type: 2}
-    reward: 0
-  - name: 
     successStory: 0
-    dialogBox: {fileID: 11400000, guid: 96f0eba538b61fe46b9f35427c16b210, type: 2}
+    dialogBox: {fileID: 11400000, guid: 55c8c6320c1a911498937d322ca3d0d8, type: 2}
     reward: 0
-  x: -739
-  y: 31
+  x: -611
+  y: 130

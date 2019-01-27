@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D29A4-646D833
+  m_EditorClassIdentifier: 
+  id: 5C4D29A4-646D833
+  speaker: 0
+  content: I can't seem to meet anyone lately. Do you know how I could make friends
+    around here?
+  emotion: 5
+  speed: 2
+  content_lang:
+  - I can't seem to meet anyone lately. Do you know how I could make friends around
+    here?
+  - 
+  - 
+  - 
+  next:
+  - name: Where did you like to hang out with your friends before?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 44ab4604fce336e42bf6da6d1581deee, type: 2}
+    reward: 0
+  - name: Have you been to the coffee shop around the corner?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 48f69b624aa13f240a6bf534fe530dd8, type: 2}
+    reward: 0
+  x: -274
+  y: 209

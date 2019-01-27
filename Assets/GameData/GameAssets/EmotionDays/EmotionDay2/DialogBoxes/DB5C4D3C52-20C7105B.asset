@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D3C52-20C7105B
+  m_EditorClassIdentifier: 
+  id: 5C4D3C52-20C7105B
+  speaker: 1
+  content: Thanks, Sacha!
+  emotion: 1
+  speed: 2
+  content_lang:
+  - Thanks, Sacha!
+  - 
+  - 
+  - 
+  next:
+  - name: 
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: de3a1c35126d47f479435662e0c9334c, type: 2}
+    reward: 0
+  x: 596
+  y: 112

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D2C7B-2AE8467E
+  m_EditorClassIdentifier: 
+  id: 5C4D2C7B-2AE8467E
+  speaker: 0
+  content: The person I met at the coffee shop hasn't texted me back. I'm pretty sad,
+    I thought we were becoming friends.
+  emotion: 5
+  speed: 2
+  content_lang:
+  - The person I met at the coffee shop hasn't texted me back. I'm pretty sad, I thought
+    we were becoming friends.
+  - 
+  - 
+  - 
+  next:
+  - name: What were your texts about?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 47836d0baea068b45a84c98d757ff9a4, type: 2}
+    reward: 0
+  - name: Have you seen them again?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: fd507fc1a8068a141b4caa51bd8a6379, type: 2}
+    reward: 0
+  x: -68
+  y: 201
