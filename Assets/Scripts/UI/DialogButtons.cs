@@ -15,10 +15,20 @@ public class DialogButtons : MonoBehaviour
     private Text textComponent;
     [SerializeField]
     private Image imageComponent;
+    [SerializeField]
+    private float width;
+    [SerializeField]
+    private float speed;
 
     private void OnEnable() {
+        RectTransform rect = gameObject.GetComponent<RectTransform>();
+
         if (textComponent.text.Length > charLimit ) {
             imageComponent.sprite = bigSprite;
+            rect.sizeDelta = new Vector2(rect.sizeDelta.x, 140);
+        }
+        else {
+            rect.sizeDelta = new Vector2(rect.sizeDelta.x, 100);
         }
     }
 

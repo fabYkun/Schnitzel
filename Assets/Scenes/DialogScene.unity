@@ -203,13 +203,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8951289e964b54b817e0d4060f94f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_dialog: {fileID: 11400000, guid: fb7c354208016114a8aa16c1b1a779c3, type: 2}
+  scene: {fileID: 11400000, guid: 6d9a770b9911dd54381f903e38ac5ad0, type: 2}
   displayed_text: {fileID: 798175538}
   displayed_speaker: {fileID: 56468604}
   character: {fileID: 1254869047}
   music: {fileID: 1113256868}
   box_small: {fileID: 21300000, guid: ed81a2e3ec1cca2408ad2baba9092ad5, type: 3}
   box_large: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
+  has_success_story: 0
 --- !u!114 &58351685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,9 +464,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 375, y: -168}
-  m_SizeDelta: {x: 750, y: 176}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 749.99994, y: -168}
+  m_SizeDelta: {x: 0, y: 140}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &277132290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,7 +530,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -562,6 +563,8 @@ MonoBehaviour:
   bigSprite: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
   textComponent: {fileID: 939486779}
   imageComponent: {fileID: 277132291}
+  width: 750
+  speed: 1
 --- !u!1 &465615376
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,9 +602,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 375, y: -312.00003}
-  m_SizeDelta: {x: 750, y: 176}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 749.99994, y: -312.00003}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &465615378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,8 +667,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: ed81a2e3ec1cca2408ad2baba9092ad5, type: 3}
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -698,6 +701,8 @@ MonoBehaviour:
   bigSprite: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
   textComponent: {fileID: 1656819709}
   imageComponent: {fileID: 465615379}
+  width: 750
+  speed: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0.00012207031}
   m_SizeDelta: {x: 1920, y: 578}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1106462736
@@ -1542,9 +1547,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 375, y: -24}
-  m_SizeDelta: {x: 750, y: 176}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 749.99994, y: -24}
+  m_SizeDelta: {x: 0, y: 140}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1716602008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1608,7 +1613,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1641,6 +1646,8 @@ MonoBehaviour:
   bigSprite: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
   textComponent: {fileID: 138473816}
   imageComponent: {fileID: 1716602009}
+  width: 750
+  speed: 1
 --- !u!222 &1445399648457747105
 CanvasRenderer:
   m_ObjectHideFlags: 0
