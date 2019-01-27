@@ -8,6 +8,8 @@ public class StepData : ScriptableObject
 {
     public Thematics thematic;
     public AudioClip audioclip;
+    public Sprite foreground;
+    public Sprite background;
 
     public enum stepType
     {
