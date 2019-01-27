@@ -13,6 +13,9 @@ public class DialogManager : MonoBehaviour
 
     public AudioSource music;
 
+    public Sprite box_small;
+    public Sprite box_large;
+
 
 
     private int current_pos = 0;
@@ -80,6 +83,11 @@ public class DialogManager : MonoBehaviour
                     b.gameObject.SetActive(true);
                     b.name = choice.name;
                     b.GetComponentInChildren<Text>().text = choice.name;
+                    if (b.GetComponentInChildren<Text>().cachedTextGenerator.lineCount > 1)
+                        b.image.sprite = box_large;
+                    else
+                        b.image.sprite = box_small;
+
                     b.onClick.AddListener(delegate { next_dialog = choice.dialogBox; go_to_next = true; });// changeDialog(choice.dialogBox);});
                 }
             }
