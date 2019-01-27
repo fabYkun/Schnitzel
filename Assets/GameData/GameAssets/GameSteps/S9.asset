@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af91da2ec3d4d0f48875848434cb1823, type: 3}
-  m_Name: S0
+  m_Name: S9
   m_EditorClassIdentifier: 
   thematic: 0
   audioclip: {fileID: 8300000, guid: 3cece6dc81cf5234e968ae5dc33ea671, type: 3}
@@ -18,9 +18,9 @@ MonoBehaviour:
   background: {fileID: 0}
   type: 0
   sweet: 0
-  spicy: 0
-  salty: 0
-  delta: 99999999
-  ingredientsPrefab: {fileID: 1542858755031171248, guid: 34e6c0921e203df4ca179df3649223f6,
+  spicy: 6
+  salty: 5
+  delta: 3
+  ingredientsPrefab: {fileID: 5954749515811238110, guid: 1f2917b5bc2b63641a9798e8fd9518c0,
     type: 3}
   scene: {fileID: 0}
