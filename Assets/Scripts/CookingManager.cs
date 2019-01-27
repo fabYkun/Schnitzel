@@ -41,7 +41,7 @@ public class CookingManager : MonoBehaviour
         goal_spicy = data.spicy;
         goal_sweet = data.sweet;
 
-        if(data.ingredientsPrefab != null)
+        if(data != null)
             ingredients_list = Instantiate(data.ingredientsPrefab);
 
         //ingredients_list_backup = Instantiate(ingredients_list);
@@ -59,7 +59,8 @@ public class CookingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Return))
+            Serve();
     }
 
     public void AddIngredient(int spicy, int sweet, int salty)

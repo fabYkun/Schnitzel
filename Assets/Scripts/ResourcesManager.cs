@@ -34,9 +34,7 @@ public class ResourcesManager : MonoBehaviour
 
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
-
-        //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
+        
 
 
         for (int i = 0; i < (int)Emotion.MAX_EMOTIONS; i++)

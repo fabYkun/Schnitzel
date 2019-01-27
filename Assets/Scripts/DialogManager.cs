@@ -110,6 +110,7 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        has_success_story = Gamemachine.instance.isSuccessful;
         scene = Gamemachine.instance.GetData().scene;
         current_dialog = scene.root;
         RefreshCanvas();
@@ -123,6 +124,8 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds((int)current_dialog.speed/(float)10.0f);
          }
     }
+
+    private bool hasEnded = false;
 
     // Update is called once per frame
     void Update()
@@ -140,6 +143,11 @@ public class DialogManager : MonoBehaviour
         {
             if (next_dialog != null)
                 changeDialog();
+            else if (!hasEnded)
+            {
+                hasEnded = true;
+                Gamemachine.instance.NextScene();
+            }
         }
     }
 }

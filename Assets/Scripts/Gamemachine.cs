@@ -114,13 +114,18 @@ public class            Gamemachine : MonoBehaviour
         float time = 0;
         float speed = 1.0f;
 
-        while (time < 1)
+        if (audioSource != null)
         {
-            time += Time.deltaTime * speed;
-            audioSource.volume = Mathf.Lerp(1.0f, 0.0f, curve.Evaluate(time));
-            yield return null;
+            while (time < 1)
+            {
+                time += Time.deltaTime * speed;
+                audioSource.volume = Mathf.Lerp(1.0f, 0.0f, curve.Evaluate(time));
+                yield return null;
+            }
         }
         audioSource.clip = audioClip;
+        audioSource.volume = 0.0f;
+        audioSource.Play();
         while (time > 0)
         {
             time -= Time.deltaTime * speed;
@@ -129,13 +134,23 @@ public class            Gamemachine : MonoBehaviour
         }
     }
 
+    public bool isSuccessful = false;
+
     public void         NextScene(bool success_story = false)
     {
-        if(steps[current_step].type == StepData.stepType.Cooking && success_story)
+        if (steps[current_step].type == StepData.stepType.Cooking && success_story)
         {
             daily_scores[current_day] = 1;
+            isSuccessful = true;
         }
 
+        if (current_step != next_step)
+        {
+            if (steps[current_step].type == StepData.stepType.Narration)
+                SceneManager.UnloadScene(1);
+            else if (steps[current_step].type == StepData.stepType.Cooking)
+                SceneManager.UnloadScene(2);
+        }
         if (next_step >= steps.Count)
         {
             EndGame();
@@ -146,6 +161,7 @@ public class            Gamemachine : MonoBehaviour
         }
         else
         {
+            isSuccessful = false;
             LoadKitchen(steps[next_step]);
         }
         current_step = next_step;

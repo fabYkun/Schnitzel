@@ -66,7 +66,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
-    - _Frequency: 11.1
+    - _Frequency: 19.2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -76,7 +76,7 @@ Material:
     - _Parallax: 0.02
     - _ResolutionX: 1
     - _ResolutionY: 1
-    - _Sides: 4.2
+    - _Sides: 6.6000004
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 35
