@@ -50,6 +50,7 @@ public class                SOSceneEditor : Editor
         DrawDefaultInspector();
         if (GUILayout.Button("Load"))
         {
+            AssetDatabase.Refresh();
             loadedNodes.Clear();
             NodeBasedEditor.instance.scene = scene;
             NodeBasedEditor.instance.ClearInstance();
