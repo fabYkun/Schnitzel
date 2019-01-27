@@ -25,6 +25,8 @@ public class CookingManager : MonoBehaviour
 
     public GameObject taste_effect;
 
+    private StepData data;
+
     public float transitionTime = 1.0f;
 
 
@@ -32,8 +34,17 @@ public class CookingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ingredients_list_backup = Instantiate(ingredients_list);
-        ingredients_list_backup.SetActive(false);
+        
+        goal_delta = data.delta;
+        goal_salty = data.salty;
+        goal_spicy = data.spicy;
+        goal_sweet = data.sweet;
+
+        if(data.ingredientsPrefab != null)
+            ingredients_list = Instantiate(data.ingredientsPrefab);
+
+        //ingredients_list_backup = Instantiate(ingredients_list);
+        //ingredients_list_backup.SetActive(false);
         taste_effect.GetComponent<CanvasGroup>().alpha = 0;
         RectTransform rt = (RectTransform)taste_effect.transform.Find("Synesthesia");
         rt.sizeDelta = new Vector2(0, 0);
@@ -79,7 +90,7 @@ public class CookingManager : MonoBehaviour
     public void Reset()
     {
         Destroy(ingredients_list);
-        ingredients_list = Instantiate(ingredients_list_backup);
+        ingredients_list = Instantiate(data.ingredientsPrefab);
         ingredients_list.SetActive(true);
 
         current_spicy = 0;
