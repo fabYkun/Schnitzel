@@ -34,7 +34,8 @@ public class CookingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        data = Gamemachine.instance.GetData();
         goal_delta = data.delta;
         goal_salty = data.salty;
         goal_spicy = data.spicy;
