@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8951289e964b54b817e0d4060f94f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_dialog: {fileID: 11400000, guid: 55ea324b7539ee34d8e3d0a70c378b2b, type: 2}
+  scene: {fileID: 11400000, guid: d152b08c4d8332140a865433aaaf7adb, type: 2}
   displayed_text: {fileID: 2107103422}
   displayed_speaker: {fileID: 237941377}
   character: {fileID: 1235355578}

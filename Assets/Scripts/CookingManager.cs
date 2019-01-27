@@ -16,6 +16,8 @@ public class CookingManager : MonoBehaviour
 
     public GameObject taste_effect;
 
+    public float transitionTime = 1.0f;
+
     public 
 
 
@@ -59,9 +61,9 @@ public class CookingManager : MonoBehaviour
             rt.sizeDelta = new Vector2(f*1000, f*1000);
             taste_effect.GetComponent<CanvasGroup>().alpha = f;
 
-            yield return null;
+            yield return new WaitForSeconds(transitionTime/100.0f);
         }
-        yield return null;
+        yield return new WaitForSeconds(transitionTime / 100.0f);
     }
 
     IEnumerator FadeOutTaste()
@@ -72,11 +74,11 @@ public class CookingManager : MonoBehaviour
             rt.sizeDelta = new Vector2(f * 1000, f * 1000);
             taste_effect.GetComponent<CanvasGroup>().alpha = f;
 
-            yield return null;
+            yield return new WaitForSeconds(transitionTime / 100.0f);
         }
 
         taste_effect.SetActive(false);
-        yield return null;
+        yield return new WaitForSeconds(transitionTime / 100.0f);
     }
 
     public void DisplayTaste(int spicy, int sweet, int salty)
