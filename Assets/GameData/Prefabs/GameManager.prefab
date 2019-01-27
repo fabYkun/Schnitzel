@@ -379,6 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2413200077852298115}
   - component: {fileID: 2597825103363155021}
+  - component: {fileID: 1511757075}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -420,5 +421,50 @@ MonoBehaviour:
   next_step: 0
   current_step: 0
   current_mode: 0
-  intro: {fileID: 0}
+  intro: {fileID: 1666941549}
   transition: {fileID: 2016642816584262565}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  cursorDisplay: {fileID: 1511757075}
+--- !u!114 &1511757075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741780305015495260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b892d69d9a1c934080487f4cc4534b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor_neutral: {fileID: 2800000, guid: 3b74d318a09508e40817acc232989f89, type: 3}
+  hotSpot_neutral: {x: 0, y: 0}
+  cursor_grab: {fileID: 2800000, guid: fb5473167b8a59844bfa0066f5d68413, type: 3}
+  hotSpot_grab: {x: 0, y: 0}
+  cursor_ready_to_grab: {fileID: 2800000, guid: 7018331508e193846a2172b8d33dc944,
+    type: 3}
+  hotSpot_ready_to_grab: {x: 0, y: 0}
+  cursorMode: 0
