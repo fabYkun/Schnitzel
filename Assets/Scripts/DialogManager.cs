@@ -16,6 +16,9 @@ public class DialogManager : MonoBehaviour
 
 
     private int current_pos = 0;
+    private SODialogBox next_dialog = null;
+    private bool go_to_next = false;
+    private bool has_success_story = false;
 
 
     void RefreshCanvas()
@@ -25,15 +28,41 @@ public class DialogManager : MonoBehaviour
         displayed_text.text = "";
         current_pos = 0;
 
+        next_dialog = null;
+
+        if(current_dialog.next.Length > 1)
+        {
+            for (int i = 0; i < current_dialog.next.Length && !next_dialog; i++)
+            {
+                Choice c = current_dialog.next[i];
+                if (c.successStory)
+                {
+                    if (has_success_story && string.IsNullOrEmpty(c.name))
+                    {
+                        next_dialog = c.dialogBox;
+                    }
+                }
+            }
+        }
+        else if (current_dialog.next.Length == 1 && string.IsNullOrEmpty(current_dialog.next[0].name))
+        {
+            next_dialog = current_dialog.next[0].dialogBox;
+        }
+
+        if (string.IsNullOrEmpty(current_dialog.content))
+            go_to_next = true;
+
         //GetComponent<Image>().sprite = current_dialog.background;
 
 
         //Change sprite and music
         character.sprite = ResourcesManager.instance.getSpriteForEmotion(current_dialog.emotion);
         //music.clip = ResourcesManager.instance.GetAudioClipForEmotion(current_dialog.emotion);
+
+        /*
+        bool hasSuccessStory = false;
         
-
-
+        }*/
 
         //Choice management
         Button[] choice_buttons = GetComponentsInChildren<Button>(true);
@@ -41,26 +70,34 @@ public class DialogManager : MonoBehaviour
         {
             choice_buttons[i].gameObject.SetActive(false);
         }
-        if(current_dialog.next.Length > 1)
+        if(next_dialog == null && (current_dialog.next.Length > 1 || (current_dialog.next.Length == 1 && !string.IsNullOrEmpty(current_dialog.next[0].name))))
         {
             for(int i = 0 ; i < current_dialog.next.Length ; i++)
             {
-                Button b = choice_buttons[i];
-                choice_buttons[i].gameObject.SetActive(true);
+
                 Choice choice = current_dialog.next[i];
-                b.name = choice.name;
-                b.GetComponentInChildren<Text>().text = choice.name;
-                b.onClick.AddListener(delegate{changeDialog(choice.dialogBox);});
-                
+
+                if (choice.successStory == has_success_story)
+                {
+                    Button b = choice_buttons[i];
+                    b.gameObject.SetActive(true);
+                    b.name = choice.name;
+                    b.GetComponentInChildren<Text>().text = choice.name;
+                    b.onClick.AddListener(delegate { next_dialog = choice.dialogBox; go_to_next = true; });// changeDialog(choice.dialogBox);});
+                }
             }
         }
 
     }
 
-    void changeDialog(SODialogBox next)
+    void changeDialog()
     {
-        current_dialog = next;
-        RefreshCanvas();
+        if(next_dialog != null)
+        {
+            current_dialog = next_dialog;
+            go_to_next = false;
+            RefreshCanvas();
+        }
     }
 
     // Start is called before the first frame update
@@ -78,17 +115,22 @@ public class DialogManager : MonoBehaviour
          }
     }
 
-
     // Update is called once per frame
     void Update()
     {
-        if(displayed_text.text != current_dialog.content)
+
+        if (Input.GetKeyDown(KeyCode.Return))
+            go_to_next = true;
+
+
+        if (displayed_text.text != current_dialog.content)
         {
             StartCoroutine(WriteText());
         }
-        else if(Input.GetKeyDown(KeyCode.Return) && current_dialog.next.Length == 1)
+        else if(go_to_next)
         {
-           changeDialog(current_dialog.next[0].dialogBox);
+            if (next_dialog != null)
+                changeDialog();
         }
     }
 }
