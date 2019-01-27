@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af91da2ec3d4d0f48875848434cb1823, type: 3}
+  m_Name: New Step Data 3
+  m_EditorClassIdentifier: 
+  thematic: 1
+  type: 0
+  sweet: 0
+  spicy: 6
+  salty: 5
+  delta: 3
+  ingredientsPrefab: {fileID: 5954749515811238110, guid: 1f2917b5bc2b63641a9798e8fd9518c0,
+    type: 3}
+  scene: {fileID: 0}
