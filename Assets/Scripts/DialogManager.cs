@@ -56,7 +56,8 @@ public class DialogManager : MonoBehaviour
 
 
         //Change sprite and music
-        character.sprite = ResourcesManager.instance.getSpriteForEmotion(current_dialog.emotion);
+        if (current_dialog.speaker == Characters.Protagonist)
+            character.sprite = ResourcesManager.instance.getSpriteForEmotion(current_dialog.emotion);
         //music.clip = ResourcesManager.instance.GetAudioClipForEmotion(current_dialog.emotion);
 
         /*

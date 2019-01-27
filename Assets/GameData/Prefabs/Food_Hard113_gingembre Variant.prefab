@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 719664434195996719, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_Name
-      value: Food_gingembre
+      value: Food_Hard113_gingembre Variant
       objectReference: {fileID: 0}
     - target: {fileID: 719664433213874496, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
@@ -67,6 +67,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996691, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66fd3d79e18e68341a689bd96507d4be,
+        type: 3}
     - target: {fileID: 719664434195996716, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: spicy
@@ -82,17 +88,52 @@ PrefabInstance:
       propertyPath: sweet
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 719664434195996691, guid: 970afe3592379944882873fab881b2b5,
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 66fd3d79e18e68341a689bd96507d4be,
+      propertyPath: m_Offset.y
+      value: -248.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664433408700402, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664433408700402, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -124.5
+      objectReference: {fileID: 0}
     - target: {fileID: 719664433408700401, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 7136360139888246936}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 230
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252415550960504978, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72d274e5446c7ba4d880192dad0e52b3,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970afe3592379944882873fab881b2b5, type: 3}
 --- !u!114 &7136360139888246936 stripped

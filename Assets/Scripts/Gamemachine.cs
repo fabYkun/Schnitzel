@@ -21,6 +21,13 @@ public enum Gamemodes
     Endgame
 };
 
+public enum GameCursors
+{
+    Neutral,
+    ReadyToGrab,
+    Grab
+};
+
 public class            Gamemachine : MonoBehaviour
 {
     static int          max_days = (int)Thematics.NB_THEMATICS * 2;
@@ -38,6 +45,8 @@ public class            Gamemachine : MonoBehaviour
     private Image       transition;
     [SerializeField]
     private AnimationCurve curve;
+    
+    public CursorDisplay cursorDisplay;
 
     public static Gamemachine instance;
 
@@ -47,6 +56,7 @@ public class            Gamemachine : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            ChangeCursor(GameCursors.Neutral);
         }
         else GameObject.Destroy(this.gameObject);
     }
@@ -117,6 +127,16 @@ public class            Gamemachine : MonoBehaviour
     public StepData     GetData()
     {
         return steps[current_step];
+    }
+
+    static public void  ChangeCursor(GameCursors newCursor)
+    {
+        if (newCursor == GameCursors.ReadyToGrab)
+            Gamemachine.instance.cursorDisplay.update_cursor_ready_to_grab();
+        else if (newCursor == GameCursors.Grab)
+            Gamemachine.instance.cursorDisplay.update_cursor_grab();
+        else
+            Gamemachine.instance.cursorDisplay.update_cursor_neutral();
     }
 
     void                Update()

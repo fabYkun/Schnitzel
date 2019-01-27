@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 719664434195996719, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_Name
-      value: Food_oeuf Variant
+      value: Food_Easy010_oeuf Variant
       objectReference: {fileID: 0}
     - target: {fileID: 719664433213874496, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
@@ -67,22 +67,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 719664434195996716, guid: 970afe3592379944882873fab881b2b5,
-        type: 3}
-      propertyPath: salty
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 719664434195996691, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ce1e43af6d2030e47a644b28ff687263,
         type: 3}
+    - target: {fileID: 719664434195996716, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: salty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Radius
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -226.21
+      objectReference: {fileID: 0}
     - target: {fileID: 719664433408700401, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 7689255654066951966}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 168
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 133
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252415550960504978, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5e6c3395f91496344ac0e3ec5344d3f9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970afe3592379944882873fab881b2b5, type: 3}
 --- !u!114 &7689255654066951966 stripped

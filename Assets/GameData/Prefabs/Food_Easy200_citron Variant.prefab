@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 719664434195996719, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_Name
-      value: Food_citron Variant
+      value: Food_Easy200_citron Variant
       objectReference: {fileID: 0}
     - target: {fileID: 719664433213874496, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
@@ -77,6 +77,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996691, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a48ebcda805aee41a903791542a6c35,
+        type: 3}
     - target: {fileID: 719664434195996716, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: sweet
@@ -91,6 +97,21 @@ PrefabInstance:
         type: 3}
       propertyPath: spicy
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Radius
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -20.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -248.27
       objectReference: {fileID: 0}
     - target: {fileID: 719664432897320092, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
@@ -115,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 719664432897320093, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 719664433408700402, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
@@ -127,22 +148,37 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 200
       objectReference: {fileID: 0}
-    - target: {fileID: 719664434195996691, guid: 970afe3592379944882873fab881b2b5,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1a48ebcda805aee41a903791542a6c35,
-        type: 3}
-    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
-        type: 3}
-      propertyPath: m_Radius
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 719664433408700401, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 7187487713862042203}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 147
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -81
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252415550960504978, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c729efe5486bec47b65ce8b05a1587f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970afe3592379944882873fab881b2b5, type: 3}
 --- !u!114 &7187487713862042203 stripped
