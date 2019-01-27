@@ -19,4 +19,4 @@ MonoBehaviour:
   salty: 0
   delta: 9999999
   ingredientsPrefab: {fileID: 0}
-  scene: {fileID: 11400000, guid: 8f145e9934c8ead4e90e5fabf752a6d0, type: 2}
+  scene: {fileID: 11400000, guid: bfd0a7a3d0598b24d9936ac34f3576bf, type: 2}
