@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D2154-2F0A0E48
+  m_EditorClassIdentifier: 
+  id: 5C4D2154-2F0A0E48
+  speaker: 0
+  content: I've been to my job interview at the post office today. They called me
+    back as soon as I got home.
+  emotion: 1
+  speed: 2
+  content_lang:
+  - I've been to my job interview at the post office today. They called me back as
+    soon as I got home.
+  - 
+  - 
+  - 
+  next:
+  - name: So how did it go?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 8899eb7fad73a3e4399bc8c009fc3b6f, type: 2}
+    reward: 0
+  - name: What did they tell you on the phone?
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: b59aab015e016fd41b1b7f8549696477, type: 2}
+    reward: 0
+  x: 702
+  y: 69

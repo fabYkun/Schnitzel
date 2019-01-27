@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D2175-368AC325
+  m_EditorClassIdentifier: 
+  id: 5C4D2175-368AC325
+  speaker: 0
+  content: It went great! I'm super excited about working there. The other employees
+    are fun and the boss is really nice.
+  emotion: 1
+  speed: 2
+  content_lang:
+  - It went great! I'm super excited about working there. The other employees are
+    fun and the boss is really nice.
+  - 
+  - 
+  - 
+  next:
+  - name: 
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 4afc18c0f87d7a74ab905ab0cbc047e0, type: 2}
+    reward: 0
+  x: 967
+  y: 49

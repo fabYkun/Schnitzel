@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D21E6-1C3F6246
+  m_EditorClassIdentifier: 
+  id: 5C4D21E6-1C3F6246
+  speaker: 1
+  content: How unprofessional! You're better off without them, Sacha. You'll find
+    something better soon, I guarantee it.
+  emotion: 2
+  speed: 2
+  content_lang:
+  - How unprofessional! You're better off without them, Sacha. You'll find something
+    better soon, I guarantee it.
+  - 
+  - 
+  - 
+  next:
+  - name: 
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: c0d35582a19e4894d9d729431ec8f816, type: 2}
+    reward: 0
+  x: 1244
+  y: 210
