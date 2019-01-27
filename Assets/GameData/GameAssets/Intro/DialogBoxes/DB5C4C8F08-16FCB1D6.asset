@@ -25,7 +25,7 @@ MonoBehaviour:
   next:
   - name: 
     successStory: 0
-    dialogBox: {fileID: 0}
+    dialogBox: {fileID: 11400000, guid: 4668cd9fab561f14ba23226a256608aa, type: 2}
     reward: 0
-  x: 42
-  y: 126
+  x: 265
+  y: 152
