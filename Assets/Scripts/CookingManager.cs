@@ -60,7 +60,7 @@ public class CookingManager : MonoBehaviour
 
         taste_effect.GetComponent<Button>().onClick.AddListener(delegate { if(taste_effect.GetComponent<CanvasGroup>().alpha > 0.95f) StartCoroutine("FadeOutTaste"); });
 
-
+        DisplayTaste(goal_spicy, goal_sweet, goal_salty);
     }
 
     // Update is called once per frame
