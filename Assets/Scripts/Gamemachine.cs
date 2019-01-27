@@ -36,6 +36,8 @@ public class            Gamemachine : MonoBehaviour
     private Image       intro;
     [SerializeField]
     private Image       transition;
+    [SerializeField]
+    private AnimationCurve curve;
 
     public static Gamemachine instance;
 
@@ -48,24 +50,50 @@ public class            Gamemachine : MonoBehaviour
         }
         else GameObject.Destroy(this.gameObject);
     }
+    
+    IEnumerator         LoadSceneTransition(int scene_to_load)
+    {
+        float           time = 0;
+        float           speed = 2.0f;
+        Color           transitionColor = new Color(transition.color.r, transition.color.g, transition.color.b);
+
+        while (time < 1)
+        {
+            time += Time.deltaTime * speed;
+
+            transitionColor.a = Mathf.Lerp(0.0f, 1.0f, curve.Evaluate(time));
+            transition.color = transitionColor;
+            yield return null;
+        }
+        SceneManager.LoadScene(scene_to_load, LoadSceneMode.Single);
+        while (time > 0)
+        {
+            time -= Time.deltaTime * speed;
+
+            transitionColor.a = Mathf.Lerp(0.0f, 1.0f, curve.Evaluate(time));
+            transition.color = transitionColor;
+            yield return null;
+        }
+    }
 
     public void         LoadNarration(StepData data)
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
         current_mode = Gamemodes.Narration;
+        StopAllCoroutines();
+        StartCoroutine(LoadSceneTransition(1));
     }
 
     public void         LoadKitchen(StepData data)
     {
         ++current_day;
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
         current_mode = Gamemodes.Kitchen;
+        StartCoroutine(LoadSceneTransition(2));
     }
 
     public void         EndGame()
     {
-        SceneManager.LoadScene(3, LoadSceneMode.Single);
         current_mode = Gamemodes.Endgame;
+        StartCoroutine(LoadSceneTransition(3));
     }
 
     public void         NextScene()
@@ -95,6 +123,9 @@ public class            Gamemachine : MonoBehaviour
     {
         if (current_mode == Gamemodes.PressStart &&
             (Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)))
+        {
+            intro.gameObject.SetActive(false);
             NextScene();
+        }
     }
 }

@@ -179,6 +179,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597825103363155021, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+        type: 3}
+      propertyPath: intro
+      value: 
+      objectReference: {fileID: 1819696814}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02032f3365b57d54eb71fb7abec8cfdc, type: 3}
 --- !u!1 &832321627
@@ -217,7 +277,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -263,3 +323,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1819696814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1666941549, guid: 02032f3365b57d54eb71fb7abec8cfdc,
+    type: 3}
+  m_PrefabInstance: {fileID: 456089424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
