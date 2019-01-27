@@ -27,11 +27,11 @@ MonoBehaviour:
   next:
   - name: Of course, Sacha. What happened?
     successStory: 0
-    dialogBox: {fileID: 0}
+    dialogBox: {fileID: 11400000, guid: d383764a49e802d4ba01f8c4cac4521a, type: 2}
     reward: 0
   - name: It's fine, really. What do you need?
     successStory: 0
-    dialogBox: {fileID: 0}
+    dialogBox: {fileID: 11400000, guid: 67f36887a7e849a4280afe905c9d5ac6, type: 2}
     reward: 0
-  x: 471
-  y: 179
+  x: 64
+  y: 76
