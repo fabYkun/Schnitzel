@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4C83BC-A4C1678
+  m_EditorClassIdentifier: 
+  id: 5C4C83BC-A4C1678
+  speaker: 0
+  content: Merde
+  emotion: 0
+  speed: 0
+  content_lang:
+  - Merde
+  - 
+  - 
+  - 
+  next:
+  - name: Oui
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 8cd9d08a093f13d44b6cad87050f520e, type: 2}
+    reward: 0
+  - name: Non
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 4442527d5b8b0d349b1e1259ec604f7b, type: 2}
+    reward: 0
+  x: 446
+  y: 54

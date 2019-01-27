@@ -63,11 +63,14 @@ public class                        SODialogBox : ScriptableObject
     public string                   content;
     /// <summary>The emotion the character shows in this dialogbox</summary>
     public Emotion                  emotion;
-
+    /// <summary>Speed of the text</summary>
     public TypingSpeed              speed;
+    /// <summary>Translations</summary>
     public string[]                 content_lang = new string[(int) Languages.MAX_LANGUAGES];
     /// <summary>Tree of choices left to the player in the end</summary>
     public Choice[]                 next;
+    [HideInInspector]
+    public float                    x, y; /* visual editing */
 
     public static string            GetUniqueID()
     {

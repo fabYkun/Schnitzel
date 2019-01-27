@@ -9,40 +9,62 @@ public class Node
     public string title;
     public bool isDragged;
     public bool isSelected;
+    public bool isEntryPoint = false;
+
+    public SODialogBox dialogBox = null;
 
     public ConnectionPoint inPoint;
     public List<ConnectionPoint> outPoints = new List<ConnectionPoint>();
 
     public GUIStyle style;
+    public GUIStyle entryStyle;
     public GUIStyle defaultNodeStyle;
     public GUIStyle selectedNodeStyle;
+    public GUIStyle _outPointStyle;
+    public Action<ConnectionPoint> _OnClickOutPoint;
+    float initialHeight;
 
     public Action<Node> OnRemoveNode;
 
-    public Node(Vector2 position, float width, float height, GUIStyle nodeStyle, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<Node> OnClickRemoveNode)
+    public Node(Vector2 position, float width, float height, GUIStyle nodeStyle, GUIStyle entryNodeStyle, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<Node> OnClickRemoveNode)
     {
-        rect = new Rect(position.x, position.y, width, height);
+        initialHeight = height;
+        rect = new Rect(position.x, position.y, width, initialHeight);
         style = nodeStyle;
+        entryStyle = entryNodeStyle;
         inPoint = new ConnectionPoint(this, ConnectionPointType.In, inPointStyle, OnClickInPoint);
-        outPoints.Add(new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint));
         defaultNodeStyle = nodeStyle;
         selectedNodeStyle = selectedStyle;
+        _outPointStyle = outPointStyle;
+        _OnClickOutPoint = OnClickOutPoint;
         OnRemoveNode = OnClickRemoveNode;
     }
 
     public void Drag(Vector2 delta)
     {
         rect.position += delta;
+        dialogBox.x = rect.position.x;
+        dialogBox.y = rect.position.y;
     }
 
     public void Draw()
     {
         inPoint.Draw();
-        foreach (ConnectionPoint connection in outPoints)
+        if (dialogBox != null && outPoints != null && dialogBox.next != null)
         {
-            connection.Draw();
+            while (outPoints.Count > dialogBox.next.Length)
+                outPoints.RemoveAt(outPoints.Count - 1);
+            while (outPoints.Count < dialogBox.next.Length)
+                outPoints.Add(new ConnectionPoint(this, ConnectionPointType.Out, _outPointStyle, _OnClickOutPoint));
+            rect.height = initialHeight + outPoints.Count * 20;
+            foreach (ConnectionPoint connection in outPoints)
+            {
+                connection.Draw();
+            }
         }
-        GUI.Box(rect, title, style);
+        GUI.Box(rect, title, isEntryPoint ? entryStyle : style);
+        string label = !string.IsNullOrEmpty(dialogBox.content) ? dialogBox.content.Substring(0, Math.Min(20, dialogBox.content.Length)) : dialogBox.id;
+        GUI.Label(rect, label, EditorStyles.centeredGreyMiniLabel);
     }
 
     public bool ProcessEvents(Event e)
@@ -68,6 +90,7 @@ public class Node
                         GUI.changed = true;
                         isSelected = true;
                         style = selectedNodeStyle;
+                        Selection.activeObject = dialogBox;
                     }
                     else if (Event.current.modifiers != EventModifiers.Shift)
                     {
@@ -104,13 +127,13 @@ public class Node
     private void ProcessContextMenu()
     {
         GenericMenu genericMenu = new GenericMenu();
-        genericMenu.AddItem(new GUIContent("Add choice"), false, OnClickAddChoice);
+        genericMenu.AddItem(new GUIContent("Set as entry node"), false, SetAsEntryNode);
         genericMenu.ShowAsContext();
     }
 
-    private void OnClickAddChoice()
+    private void SetAsEntryNode()
     {
-        rect.height += 50;
+        NodeBasedEditor.instance.SetEntryNode(this);
     }
 
     private void OnClickRemoveNode()
