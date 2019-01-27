@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 706964e2b5c23d347abe0a50e5d67487, type: 3}
-  m_Name: New SO Scene
+  m_Name: JobDay2
   m_EditorClassIdentifier: 
   SceneTitle: JobDay2
-  root: {fileID: 0}
+  root: {fileID: 11400000, guid: 7788161034781aa4b98111325da1552c, type: 2}
