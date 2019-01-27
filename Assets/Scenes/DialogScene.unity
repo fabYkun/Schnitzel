@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8951289e964b54b817e0d4060f94f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_dialog: {fileID: 0}
+  current_dialog: {fileID: 11400000, guid: fb7c354208016114a8aa16c1b1a779c3, type: 2}
   displayed_text: {fileID: 2107103422}
   displayed_speaker: {fileID: 237941377}
   character: {fileID: 1235355578}
@@ -810,8 +810,8 @@ MonoBehaviour:
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Button
 --- !u!222 &939486780
