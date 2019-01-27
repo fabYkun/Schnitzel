@@ -1718,6 +1718,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 27.84902
       objectReference: {fileID: 0}
+    - target: {fileID: 1438212017349568768, guid: 2f6f55b84579790448c7026646703c86,
+        type: 3}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6f55b84579790448c7026646703c86, type: 3}
 --- !u!1 &1503434261
