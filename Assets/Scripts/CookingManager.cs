@@ -41,8 +41,15 @@ public class CookingManager : MonoBehaviour
         goal_spicy = data.spicy;
         goal_sweet = data.sweet;
 
+        current_salty = 0;
+        current_spicy = 0;
+        current_sweet = 0;
+
         if(data != null)
+        {
             ingredients_list = Instantiate(data.ingredientsPrefab);
+        }
+            
 
         //ingredients_list_backup = Instantiate(ingredients_list);
         //ingredients_list_backup.SetActive(false);

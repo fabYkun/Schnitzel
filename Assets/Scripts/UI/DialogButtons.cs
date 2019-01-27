@@ -25,10 +25,6 @@ public class DialogButtons : MonoBehaviour
 
         if (textComponent.text.Length > charLimit ) {
             imageComponent.sprite = bigSprite;
-            rect.sizeDelta = new Vector2(rect.sizeDelta.x, 140);
-        }
-        else {
-            rect.sizeDelta = new Vector2(rect.sizeDelta.x, 100);
         }
     }
 

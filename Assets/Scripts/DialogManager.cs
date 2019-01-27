@@ -67,7 +67,8 @@ public class DialogManager : MonoBehaviour
 
         //Choice management
         Button[] choice_buttons = GetComponentsInChildren<Button>(true);
-        for(int i = 0; i  < choice_buttons.Length; i++)
+        Debug.Log( "Number of chhoices : " + choice_buttons.Length);
+        for (int i = 0; i  < choice_buttons.Length; i++)
         {
             choice_buttons[i].gameObject.SetActive(false);
         }
@@ -77,9 +78,10 @@ public class DialogManager : MonoBehaviour
             {
 
                 Choice choice = current_dialog.next[i];
-
+                Debug.Log("BONJOUR " + choice.successStory + " et " + has_success_story);
                 if (choice.successStory == has_success_story)
                 {
+                    Debug.Log("Salut");
                     Button b = choice_buttons[i];
                     b.name = choice.name;
                     b.GetComponentInChildren<Text>().text = choice.name;
@@ -103,6 +105,11 @@ public class DialogManager : MonoBehaviour
         {
             current_dialog = next_dialog;
             go_to_next = false;
+            if(current_dialog.next.Length == 0)
+                Gamemachine.instance.NextScene();
+
+            Debug.Log("COCOU");
+
             RefreshCanvas();
         }
     }
@@ -110,7 +117,7 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        has_success_story = Gamemachine.instance.isSuccessful;
+        //has_success_story = Gamemachine.instance.isSuccessful;
         scene = Gamemachine.instance.GetData().scene;
         current_dialog = scene.root;
         RefreshCanvas();
@@ -143,11 +150,6 @@ public class DialogManager : MonoBehaviour
         {
             if (next_dialog != null)
                 changeDialog();
-            else if (!hasEnded)
-            {
-                hasEnded = true;
-                Gamemachine.instance.NextScene();
-            }
         }
     }
 }
