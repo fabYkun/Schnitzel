@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FoodBehaviour : MonoBehaviour
 {
@@ -13,10 +14,15 @@ public class FoodBehaviour : MonoBehaviour
 
     public CookingManager cookingManager;
 
+    private Canvas side_menu;
+
     // Start is called before the first frame update
     void Start()
     {
         cookingManager = Camera.main.GetComponent<CookingManager>();
+        side_menu = GetComponentInChildren<Canvas>(true);
+
+        side_menu.GetComponentInChildren<Button>(true).onClick.AddListener(delegate { cookingManager.DisplayTaste(spicy, sweet, salty); });
     }
 
     // Update is called once per frame
@@ -33,24 +39,23 @@ public class FoodBehaviour : MonoBehaviour
         newPos.z = old_z;
         this.gameObject.transform.position = newPos;
         heldDown = true;
-        GetComponentInChildren<Canvas>(true).gameObject.SetActive(false);
+        side_menu.gameObject.SetActive(false);
     }
 
     void OnMouseUpAsButton()
     {
         heldDown = false;
-        GetComponentInChildren<Canvas>(true).gameObject.SetActive(true);
+        side_menu.gameObject.SetActive(true);
     }
 
     void OnMouseEnter()
     {
-        GetComponentInChildren<Canvas>(true).gameObject.SetActive(true);
+        side_menu.gameObject.SetActive(true);
     }
 
     void OnMouseExit()
     {
-        Canvas menu = GetComponentInChildren<Canvas>(true);
-        menu.gameObject.SetActive(menu.GetComponent<UIBehaviour>().isMouseOverUI());
+        side_menu.gameObject.SetActive(side_menu.GetComponent<UIBehaviour>().isMouseOverUI());
     }
 
     //void OnTriggerEnter2D()

@@ -14,11 +14,22 @@ public class CookingManager : MonoBehaviour
     public Text spicy_text;
     public Text sweet_text;
 
+    public GameObject taste_effect;
+
+    public 
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        taste_effect.GetComponent<CanvasGroup>().alpha = 0;
+        RectTransform rt = (RectTransform)taste_effect.transform.Find("Synesthesia");
+        rt.sizeDelta = new Vector2(0, 0);
+        taste_effect.SetActive(false);
+
+        taste_effect.GetComponent<Button>().onClick.AddListener(delegate { if(taste_effect.GetComponent<CanvasGroup>().alpha > 0.95f) StartCoroutine("FadeOutTaste"); });
+
+
     }
 
     // Update is called once per frame
@@ -38,5 +49,44 @@ public class CookingManager : MonoBehaviour
         sweet_text.text = current_sweet.ToString();
         spicy_text.text = current_spicy.ToString();
 
+    }
+
+    IEnumerator FadeInTaste()
+    {
+        for (float f = 0; f < 1.0f; f += 0.01f)
+        {
+            RectTransform rt = (RectTransform)taste_effect.transform.Find("Synesthesia");
+            rt.sizeDelta = new Vector2(f*1000, f*1000);
+            taste_effect.GetComponent<CanvasGroup>().alpha = f;
+
+            yield return null;
+        }
+        yield return null;
+    }
+
+    IEnumerator FadeOutTaste()
+    {
+        for (float f = 1.0f; f > 0.0f; f -= 0.01f)
+        {
+            RectTransform rt = (RectTransform)taste_effect.transform.Find("Synesthesia");
+            rt.sizeDelta = new Vector2(f * 1000, f * 1000);
+            taste_effect.GetComponent<CanvasGroup>().alpha = f;
+
+            yield return null;
+        }
+
+        taste_effect.SetActive(false);
+        yield return null;
+    }
+
+    public void DisplayTaste(int spicy, int sweet, int salty)
+    {
+        taste_effect.SetActive(true);
+        StartCoroutine("FadeInTaste");
+        
+        Image syn = taste_effect.transform.Find("Synesthesia").GetComponent<Image>();
+        syn.material.SetFloat("_Sides", sweet);
+        syn.material.SetFloat("_Frequency", salty);
+        syn.material.SetColor("_Color", new Color(spicy, 0, 0)); //TODO: decide on the color
     }
 }
