@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af91da2ec3d4d0f48875848434cb1823, type: 3}
   m_Name: S7
   m_EditorClassIdentifier: 
-  thematic: 0
-  audioclip: {fileID: 8300000, guid: 3cece6dc81cf5234e968ae5dc33ea671, type: 3}
+  thematic: 2
+  audioclip: {fileID: 8300000, guid: ab5bc0dae42cf2946a96d630787c806e, type: 3}
   foreground: {fileID: 0}
   background: {fileID: 0}
   type: 0
