@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-
     public SOScene scene;
     private SODialogBox current_dialog;
     public Text displayed_text;
@@ -110,6 +109,7 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scene = Gamemachine.instance.GetData().scene;
         current_dialog = scene.root;
         RefreshCanvas();
     }
