@@ -10,12 +10,6 @@ public class CookingManager : MonoBehaviour
     private int current_salty = 0;
     private int current_sweet = 0;
 
-    private int goal_spicy = 0;
-    private int goal_salty = 0;
-    private int goal_sweet = 0;
-
-    private int goal_delta = 0;
-
     public Text salty_text;
     public Text spicy_text;
     public Text sweet_text;
@@ -63,18 +57,6 @@ public class CookingManager : MonoBehaviour
 
     }
 
-    public bool CheckForVictory()
-    {
-        int delta_sum = (goal_salty - current_salty) + (goal_spicy - current_spicy) + (goal_sweet - current_sweet);
-
-        return delta_sum < goal_delta;
-    }
-
-    public void Serve()
-    {
-        CheckForVictory();
-
-    }
 
     public void Reset()
     {
@@ -99,9 +81,9 @@ public class CookingManager : MonoBehaviour
             rt.sizeDelta = new Vector2(f*1000, f*1000);
             taste_effect.GetComponent<CanvasGroup>().alpha = f;
 
-            yield return new WaitForSecondsRealtime(transitionTime / 100.0f);
+            yield return new WaitForSeconds(transitionTime/100.0f);
         }
-        yield return new WaitForSecondsRealtime(transitionTime / 100.0f);
+        yield return new WaitForSeconds(transitionTime / 100.0f);
     }
 
     IEnumerator FadeOutTaste()
@@ -112,11 +94,11 @@ public class CookingManager : MonoBehaviour
             rt.sizeDelta = new Vector2(f * 1000, f * 1000);
             taste_effect.GetComponent<CanvasGroup>().alpha = f;
 
-            yield return new WaitForSecondsRealtime (transitionTime / 100.0f);
+            yield return new WaitForSeconds(transitionTime / 100.0f);
         }
 
         taste_effect.SetActive(false);
-        yield return new WaitForSecondsRealtime(transitionTime / 100.0f);
+        yield return new WaitForSeconds(transitionTime / 100.0f);
     }
 
     public void DisplayTaste()
@@ -130,8 +112,8 @@ public class CookingManager : MonoBehaviour
         StartCoroutine("FadeInTaste");
         
         Image syn = taste_effect.transform.Find("Synesthesia").GetComponent<Image>();
-        syn.material.SetFloat("_Sides", Mathf.Lerp(3,15, sweet/10.0f));
-        syn.material.SetFloat("_Frequency", Mathf.Lerp(3,30, salty/10.0f));
-        syn.material.SetColor("_Color", new Color(1, 1- spicy/10.0f, 1 - spicy/10.0f)); //TODO: decide on the color
+        syn.material.SetFloat("_Sides", sweet);
+        syn.material.SetFloat("_Frequency", salty);
+        syn.material.SetColor("_Color", new Color(spicy, 0, 0)); //TODO: decide on the color
     }
 }

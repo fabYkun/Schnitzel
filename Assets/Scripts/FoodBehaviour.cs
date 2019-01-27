@@ -63,9 +63,9 @@ public class FoodBehaviour : MonoBehaviour
     //    Rigidbody2D rb = GetComponent<Rigidbody2D>();
     //    Collider2D coll = GetComponent<Collider2D>();
 
-    //    rb.bodyType = RigidbodyType2D.Static;
-    //    rb.gravityScale = 50;
-    //    Debug.Log("CollisionEnter");
+    //        rb.bodyType = RigidbodyType2D.Static;
+    //        rb.gravityScale = 50;
+    //        Debug.Log("CollisionEnter");
     //}
 
     //void OnTriggerExit2D(Collider2D other)
