@@ -19,6 +19,7 @@ public class MarmiteBehaviour : MonoBehaviour
 
         side_menu.transform.Find("Taste").gameObject.GetComponent<Button>().onClick.AddListener(delegate { cookingManager.DisplayTaste(); });
         side_menu.transform.Find("Reset").gameObject.GetComponent<Button>().onClick.AddListener(delegate { cookingManager.Reset(); });
+        side_menu.transform.Find("Reset").gameObject.GetComponent<Button>().onClick.AddListener(delegate { cookingManager.Serve(); });
 
         //side_menu.GetComponentInChildren<Button>(true).onClick.AddListener(delegate { cookingManager.DisplayTaste(spicy, sweet, salty); });
     }

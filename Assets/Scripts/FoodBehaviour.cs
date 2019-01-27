@@ -58,27 +58,27 @@ public class FoodBehaviour : MonoBehaviour
         side_menu.gameObject.SetActive(side_menu.GetComponent<UIBehaviour>().isMouseOverUI());
     }
 
-    //void OnTriggerEnter2D()
-    //{
-    //    Rigidbody2D rb = GetComponent<Rigidbody2D>();
-    //    Collider2D coll = GetComponent<Collider2D>();
+    void OnTriggerEnter2D()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Collider2D coll = GetComponent<Collider2D>();
 
-    //        rb.bodyType = RigidbodyType2D.Static;
-    //        rb.gravityScale = 50;
-    //        Debug.Log("CollisionEnter");
-    //}
+        rb.bodyType = RigidbodyType2D.Static;
+        rb.gravityScale = 50;
+        Debug.Log("CollisionEnter");
+    }
 
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    Rigidbody2D rb = GetComponent<Rigidbody2D>();
-    //    Collider2D coll = GetComponent<Collider2D>();
-    //    if (true)
-    //    {
-    //        rb.bodyType = RigidbodyType2D.Dynamic;
-    //        rb.gravityScale = 50;
-    //        Debug.Log("CollisionExit");
-    //    }
-    //}
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Collider2D coll = GetComponent<Collider2D>();
+        if (true)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.gravityScale = 50;
+            Debug.Log("CollisionExit");
+        }
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
