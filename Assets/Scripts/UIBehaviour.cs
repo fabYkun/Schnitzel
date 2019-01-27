@@ -19,14 +19,15 @@ public class UIBehaviour : MonoBehaviour, IPointerExitHandler
 
     }
 
-
     public bool isMouseOverUI()
     {
-        return EventSystem.current.IsPointerOverGameObject();
+        bool is_over = EventSystem.current.IsPointerOverGameObject();
+        return is_over;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("blabla");
         this.gameObject.SetActive(false);
     }
 

@@ -72,7 +72,7 @@ public class CookingManager : MonoBehaviour
 
     public void Serve()
     {
-        CheckForVictory();
+        Gamemachine.instance.NextScene(CheckForVictory());
 
     }
 
@@ -121,6 +121,7 @@ public class CookingManager : MonoBehaviour
 
     public void DisplayTaste()
     {
+        Debug.Log("Bite");
         DisplayTaste(current_spicy, current_sweet, current_salty);
     }
 
