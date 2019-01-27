@@ -106,8 +106,14 @@ public class            Gamemachine : MonoBehaviour
         StartCoroutine(LoadSceneTransition(3));
     }
 
-    public void         NextScene()
+    public void         NextScene(bool success_story = false)
     {
+        if(steps[current_step].type == StepData.stepType.Cooking && success_story)
+        {
+            daily_scores[current_day] = 1;
+        }
+
+
         if (next_step >= steps.Count)
         {
             EndGame();
@@ -139,7 +145,7 @@ public class            Gamemachine : MonoBehaviour
             Gamemachine.instance.cursorDisplay.update_cursor_neutral();
     }
 
-    void                Update()
+    void Update()
     {
         if (current_mode == Gamemodes.PressStart &&
             (Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)))
