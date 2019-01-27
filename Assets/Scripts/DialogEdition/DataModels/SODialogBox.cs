@@ -52,7 +52,7 @@ public enum                         TypingSpeed
 /// The text is rich as defined by Unity standards, it is displayed if the prerequisites are met. 
 /// Once displayed the player can skip to the next dialog if any linked. 
 /// </summary>
-[CreateAssetMenu(menuName = "GameData/DialogBox")]
+[CreateAssetMenu(menuName = "GameData/DialogBox"), Serializable]
 public class                        SODialogBox : ScriptableObject
 {
     public string                   id;
