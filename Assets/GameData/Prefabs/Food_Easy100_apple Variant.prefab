@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 719664434195996719, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_Name
-      value: Food_apple Variant
+      value: Food_Easy100_apple Variant
       objectReference: {fileID: 0}
     - target: {fileID: 719664433213874496, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
@@ -87,10 +87,20 @@ PrefabInstance:
       propertyPath: spicy
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 719664432897320065, guid: 970afe3592379944882873fab881b2b5,
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
-      propertyPath: m_Camera
-      value: 
+      propertyPath: m_Radius
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -236.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -57.34
       objectReference: {fileID: 0}
     - target: {fileID: 719664432897320092, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
@@ -105,28 +115,44 @@ PrefabInstance:
     - target: {fileID: 719664432897320093, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 719664433408700402, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -150
+      value: -143
       objectReference: {fileID: 0}
     - target: {fileID: 719664433408700402, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 200
+      value: 220
       objectReference: {fileID: 0}
-    - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
+    - target: {fileID: 719664432897320065, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
-      propertyPath: m_Radius
-      value: 90
+      propertyPath: m_Camera
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 719664433408700401, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 3408051002950170335}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252415550960504978, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 047deceb81ea4ff48b22d0ca383be0a9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970afe3592379944882873fab881b2b5, type: 3}
 --- !u!114 &3408051002950170335 stripped
