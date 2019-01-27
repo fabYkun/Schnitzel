@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 719664432897320093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 719664433408700402}
   m_Father: {fileID: 719664433213874496}
@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -66.87, y: 98.4}
+  m_AnchoredPosition: {x: -150, y: 200}
   m_SizeDelta: {x: 131.02, y: 46.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &719664433408700407
@@ -365,7 +365,7 @@ Transform:
   m_GameObject: {fileID: 719664434195996719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 719664432897320092}
   m_Father: {fileID: 0}
@@ -431,9 +431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa552a2454159c4485599420f70a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sweet: 10
-  salty: 10
-  spicy: 10
+  sweet: 0
+  salty: 0
+  spicy: 0
   cookingManager: {fileID: 0}
 --- !u!58 &719664434195996717
 CircleCollider2D:
@@ -450,7 +450,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.245
+  m_Radius: 90
 --- !u!50 &719664434195996718
 Rigidbody2D:
   serializedVersion: 4
