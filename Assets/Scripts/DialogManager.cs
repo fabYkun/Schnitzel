@@ -56,7 +56,8 @@ public class DialogManager : MonoBehaviour
 
 
         //Change sprite and music
-        character.sprite = ResourcesManager.instance.getSpriteForEmotion(current_dialog.emotion);
+        if (current_dialog.speaker == Characters.Protagonist)
+            character.sprite = ResourcesManager.instance.getSpriteForEmotion(current_dialog.emotion);
         //music.clip = ResourcesManager.instance.GetAudioClipForEmotion(current_dialog.emotion);
 
         /*
@@ -109,7 +110,7 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //scene = Gamemachine.instance.GetData().scene;
+        scene = Gamemachine.instance.GetData().scene;
         current_dialog = scene.root;
         RefreshCanvas();
     }
