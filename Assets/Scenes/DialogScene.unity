@@ -130,11 +130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8951289e964b54b817e0d4060f94f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_dialog: {fileID: 11400000, guid: fb7c354208016114a8aa16c1b1a779c3, type: 2}
+  current_dialog: {fileID: 11400000, guid: 55ea324b7539ee34d8e3d0a70c378b2b, type: 2}
   displayed_text: {fileID: 2107103422}
   displayed_speaker: {fileID: 237941377}
   character: {fileID: 1235355578}
   music: {fileID: 1113256868}
+  box_small: {fileID: 21300000, guid: ed81a2e3ec1cca2408ad2baba9092ad5, type: 3}
+  box_large: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
 --- !u!114 &58351685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +267,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 1f2cfd69c06c9a641a5357cd8453edeb, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 4
     m_MaxSize: 48
     m_Alignment: 5
@@ -399,7 +401,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed81a2e3ec1cca2408ad2baba9092ad5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1450,6 +1452,31 @@ PrefabInstance:
       propertyPath: m_FontData.m_LineSpacing
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3382491932054829082, guid: 2df51ef8918b04349a39345cce21bf57,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382491932054829082, guid: 2df51ef8918b04349a39345cce21bf57,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382491932054829082, guid: 2df51ef8918b04349a39345cce21bf57,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382491932054829082, guid: 2df51ef8918b04349a39345cce21bf57,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382491932999380496, guid: 2df51ef8918b04349a39345cce21bf57,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3382491931992108976, guid: 2df51ef8918b04349a39345cce21bf57,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1479,31 +1506,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 439.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3382491932999380496, guid: 2df51ef8918b04349a39345cce21bf57,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3382491932054829082, guid: 2df51ef8918b04349a39345cce21bf57,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3382491932054829082, guid: 2df51ef8918b04349a39345cce21bf57,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 3382491932054829082, guid: 2df51ef8918b04349a39345cce21bf57,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 3382491932054829082, guid: 2df51ef8918b04349a39345cce21bf57,
-        type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3382491932484392631, guid: 2df51ef8918b04349a39345cce21bf57,
         type: 3}
