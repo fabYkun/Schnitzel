@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Day0
   m_EditorClassIdentifier: 
   SceneTitle: Day 0
-  root: {fileID: 11400000, guid: 663de53e5d615984f99afdffe69b9e45, type: 2}
+  root: {fileID: 11400000, guid: fb7c354208016114a8aa16c1b1a779c3, type: 2}

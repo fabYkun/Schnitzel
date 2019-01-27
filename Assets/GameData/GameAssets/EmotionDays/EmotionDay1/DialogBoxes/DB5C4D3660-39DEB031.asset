@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4D3660-39DEB031
+  m_EditorClassIdentifier: 
+  id: 5C4D3660-39DEB031
+  speaker: 0
+  content: I want to help you out more. Don't hesitate to ask me if you need any help.
+  emotion: 1
+  speed: 2
+  content_lang:
+  - I want to help you out more. Don't hesitate to ask me if you need any help.
+  - 
+  - 
+  - 
+  next:
+  - name: 
+    successStory: 0
+    dialogBox: {fileID: 11400000, guid: 57c40a35707eb994eb55613e40fabe23, type: 2}
+    reward: 0
+  x: 1161
+  y: 82
