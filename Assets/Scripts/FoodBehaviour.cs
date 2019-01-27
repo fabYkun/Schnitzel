@@ -14,15 +14,15 @@ public class FoodBehaviour : MonoBehaviour
 
     public CookingManager cookingManager;
 
-    private Canvas side_menu;
+    private Button side_menu;
 
     // Start is called before the first frame update
     void Start()
     {
         cookingManager = Camera.main.GetComponent<CookingManager>();
-        side_menu = GetComponentInChildren<Canvas>(true);
+        side_menu = GetComponentInChildren<Button>(true);
 
-        side_menu.GetComponentInChildren<Button>(true).onClick.AddListener(delegate { cookingManager.DisplayTaste(spicy, sweet, salty); });
+        side_menu.onClick.AddListener(delegate { cookingManager.DisplayTaste(spicy, sweet, salty); });
     }
 
     // Update is called once per frame
@@ -36,7 +36,11 @@ public class FoodBehaviour : MonoBehaviour
     {
         float old_z = transform.position.z;
         Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        newPos.x -= this.GetComponentInChildren<Canvas>().transform.Find("Ingredient").localPosition.x;
+        newPos.y -= this.GetComponentInChildren<Canvas>().transform.Find("Ingredient").localPosition.y;
         newPos.z = old_z;
+
         this.gameObject.transform.position = newPos;
         heldDown = true;
         side_menu.gameObject.SetActive(false);
@@ -55,6 +59,7 @@ public class FoodBehaviour : MonoBehaviour
 
     void OnMouseExit()
     {
+        Debug.Log("exit");
         side_menu.gameObject.SetActive(side_menu.GetComponent<UIBehaviour>().isMouseOverUI());
     }
 
