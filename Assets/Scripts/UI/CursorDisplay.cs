@@ -12,17 +12,17 @@ public class CursorDisplay : MonoBehaviour
 	public CursorMode cursorMode = CursorMode.Auto;
 
 
-	void update_cursor_neutral()
+	public void update_cursor_neutral()
 	{
 		Cursor.SetCursor(cursor_neutral, hotSpot_neutral, cursorMode);
 	}
 
-	void update_cursor_grab()
+    public void update_cursor_grab()
 	{
 		Cursor.SetCursor(cursor_grab, hotSpot_grab, cursorMode);
 	}
 
-	void update_cursor_ready_to_grab()
+    public void update_cursor_ready_to_grab()
 	{
 		Cursor.SetCursor(cursor_ready_to_grab, hotSpot_ready_to_grab, cursorMode);
 	}
