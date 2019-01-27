@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4C9322-377807EE
+  m_EditorClassIdentifier: 
+  id: 5C4C9322-377807EE
+  speaker: 1
+  content: I'm sure you'll find all you need around here. We'll share a meal every
+    evening and you'll tell me about your progress. Does that sound alright?
+  emotion: 0
+  speed: 2
+  content_lang:
+  - I'm sure you'll find all you need around here. We'll share a meal every evening
+    and you'll tell me about your progress. Does that sound alright?
+  - 
+  - 
+  - 
+  next:
+  - name: 
+    successStory: 0
+    dialogBox: {fileID: 0}
+    reward: 0
+  x: 342
+  y: 207

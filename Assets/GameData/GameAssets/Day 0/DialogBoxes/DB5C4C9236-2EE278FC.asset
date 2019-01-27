@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1075c3f9f17a9a4fa5931c722cf8439, type: 3}
+  m_Name: DB5C4C9236-2EE278FC
+  m_EditorClassIdentifier: 
+  id: 5C4C9236-2EE278FC
+  speaker: 0
+  content: So... I didn't want to bother you but it's been really hard lately. Are
+    you sure I can stay here?
+  emotion: 5
+  speed: 5
+  content_lang:
+  - So... I didn't want to bother you but it's been really hard lately. Are you sure
+    I can stay here?
+  - 
+  - 
+  - 
+  next:
+  - name: Of course, Sacha. What happened?
+    successStory: 0
+    dialogBox: {fileID: 0}
+    reward: 0
+  - name: It's fine, really. What do you need?
+    successStory: 0
+    dialogBox: {fileID: 0}
+    reward: 0
+  x: 471
+  y: 179
