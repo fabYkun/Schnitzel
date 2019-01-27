@@ -109,7 +109,7 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scene = Gamemachine.instance.GetData().scene;
+        //scene = Gamemachine.instance.GetData().scene;
         current_dialog = scene.root;
         RefreshCanvas();
     }
