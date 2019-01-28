@@ -21,21 +21,22 @@ public class CookingManager : MonoBehaviour
     public Text sweet_text;
 
     public GameObject ingredients_list;
-    private GameObject ingredients_list_backup;
 
     public GameObject taste_effect;
 
-    private StepData data;
+    public StepData data = null;
 
     public float transitionTime = 1.0f;
+
+    public AudioClip ploufSound;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-        data = Gamemachine.instance.GetData();
+        if (data == null)
+            data = Gamemachine.instance.GetData();
         goal_delta = data.delta;
         goal_salty = data.salty;
         goal_spicy = data.spicy;
@@ -50,9 +51,6 @@ public class CookingManager : MonoBehaviour
             ingredients_list = Instantiate(data.ingredientsPrefab);
         }
             
-
-        //ingredients_list_backup = Instantiate(ingredients_list);
-        //ingredients_list_backup.SetActive(false);
         taste_effect.GetComponent<CanvasGroup>().alpha = 0;
         RectTransform rt = (RectTransform)taste_effect.transform.Find("Synesthesia");
         rt.sizeDelta = new Vector2(0, 0);
@@ -72,6 +70,9 @@ public class CookingManager : MonoBehaviour
 
     public void AddIngredient(int spicy, int sweet, int salty)
     {
+        AudioSource audioSource = FindObjectOfType<AudioSource>();
+        if (audioSource) audioSource.PlayOneShot(ploufSound);
+
         current_spicy += spicy;
         current_salty += salty;
         current_sweet += sweet;
@@ -85,8 +86,9 @@ public class CookingManager : MonoBehaviour
 
     public bool CheckForVictory()
     {
-        int delta_sum = (goal_salty - current_salty) + (goal_spicy - current_spicy) + (goal_sweet - current_sweet);
+        int delta_sum =  Mathf.Abs(goal_salty - current_salty) + Mathf.Abs(goal_spicy - current_spicy) + Mathf.Abs(goal_sweet - current_sweet);
 
+        Debug.Log("delta sum = " + delta_sum + " | goal = " + goal_delta + " | success = " + (delta_sum < goal_delta));
         return delta_sum < goal_delta;
     }
 
@@ -98,9 +100,9 @@ public class CookingManager : MonoBehaviour
 
     public void Reset()
     {
-        Destroy(ingredients_list);
-        ingredients_list = Instantiate(data.ingredientsPrefab);
-        ingredients_list.SetActive(true);
+        //Destroy(ingredients_list);
+        //ingredients_list = Instantiate(data.ingredientsPrefab);
+        //ingredients_list.SetActive(true);
 
         current_spicy = 0;
         current_salty = 0;
@@ -141,7 +143,6 @@ public class CookingManager : MonoBehaviour
 
     public void DisplayTaste()
     {
-        Debug.Log("Bite");
         DisplayTaste(current_spicy, current_sweet, current_salty);
     }
 

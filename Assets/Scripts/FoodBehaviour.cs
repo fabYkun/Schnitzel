@@ -20,9 +20,10 @@ public class FoodBehaviour : MonoBehaviour
     void Start()
     {
         cookingManager = Camera.main.GetComponent<CookingManager>();
-        side_menu = GetComponentInChildren<Button>(true);
 
-        side_menu.onClick.AddListener(delegate { cookingManager.DisplayTaste(spicy, sweet, salty); });
+        // TODO: Remettre les "side_menu" càd les bouton details
+        //side_menu = GetComponentInChildren<Button>(true);
+        //side_menu.onClick.AddListener(delegate { cookingManager.DisplayTaste(spicy, sweet, salty); });
     }
 
     // Update is called once per frame
@@ -43,24 +44,23 @@ public class FoodBehaviour : MonoBehaviour
 
         this.gameObject.transform.position = newPos;
         heldDown = true;
-        side_menu.gameObject.SetActive(false);
+        //side_menu.gameObject.SetActive(false);
     }
 
     void OnMouseUpAsButton()
     {
         heldDown = false;
-        side_menu.gameObject.SetActive(true);
+        //side_menu.gameObject.SetActive(true);
     }
 
     void OnMouseEnter()
     {
-        side_menu.gameObject.SetActive(true);
+        //side_menu.gameObject.SetActive(true);
     }
 
     void OnMouseExit()
     {
-        Debug.Log("exit");
-        side_menu.gameObject.SetActive(side_menu.GetComponent<UIBehaviour>().isMouseOverUI());
+        //side_menu.gameObject.SetActive(side_menu.GetComponent<UIBehaviour>().isMouseOverUI());
     }
 
     //void OnTriggerEnter2D()

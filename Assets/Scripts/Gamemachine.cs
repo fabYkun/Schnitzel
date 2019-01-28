@@ -33,6 +33,8 @@ public class            Gamemachine : MonoBehaviour
     static int          max_days = (int)Thematics.NB_THEMATICS * 2;
     public int[]        daily_scores = new int[max_days];
     public int          current_day = -1;
+    public bool         isSuccessful = false;
+    private bool        loading = false;
 
     public List<StepData> steps = new List<StepData>();
     public int next_step = 0;
@@ -48,6 +50,10 @@ public class            Gamemachine : MonoBehaviour
 
     public AudioClip audioClip;
     public AudioSource audioSource;
+
+    public AudioClip fireSound;
+    public AudioClip dingdongSound;
+    public AudioClip endofkitchenSound;
 
     public CursorDisplay cursorDisplay;
 
@@ -87,10 +93,15 @@ public class            Gamemachine : MonoBehaviour
             transition.color = transitionColor;
             yield return null;
         }
+        loading = false;
     }
 
     public void         LoadNarration(StepData data)
     {
+        if (current_step == 0)
+            audioSource.PlayOneShot(dingdongSound);
+        else if (current_step == 1 || steps[current_step].type == StepData.stepType.Cooking)
+            audioSource.PlayOneShot(endofkitchenSound);
         current_mode = Gamemodes.Narration;
         StopAllCoroutines();
         StartCoroutine(LoadSceneTransition(1));
@@ -100,6 +111,7 @@ public class            Gamemachine : MonoBehaviour
     {
         ++current_day;
         current_mode = Gamemodes.Kitchen;
+        audioSource.PlayOneShot(fireSound);
         StartCoroutine(LoadSceneTransition(2));
     }
 
@@ -134,23 +146,16 @@ public class            Gamemachine : MonoBehaviour
         }
     }
 
-    public bool isSuccessful = false;
-
     public void         NextScene(bool success_story = false)
     {
+        if (loading) return;
+        loading = true;
         if (steps[current_step].type == StepData.stepType.Cooking && success_story)
         {
             daily_scores[current_day] = 1;
             isSuccessful = true;
         }
 
-        if (current_step != next_step)
-        {
-            if (steps[current_step].type == StepData.stepType.Narration)
-                SceneManager.UnloadScene(1);
-            else if (steps[current_step].type == StepData.stepType.Cooking)
-                SceneManager.UnloadScene(2);
-        }
         if (next_step >= steps.Count)
         {
             EndGame();

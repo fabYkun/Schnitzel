@@ -16,7 +16,8 @@ public class DialogManager : MonoBehaviour
     public Sprite box_small;
     public Sprite box_large;
 
-
+    public Image background;
+    public Image foreground;
 
     private int current_pos = 0;
     private SODialogBox next_dialog = null;
@@ -79,7 +80,7 @@ public class DialogManager : MonoBehaviour
 
                 Choice choice = current_dialog.next[i];
                 Debug.Log("BONJOUR " + choice.successStory + " et " + has_success_story);
-                if (choice.successStory == has_success_story)
+                if (choice.successStory == has_success_story || !choice.successStory)
                 {
                     Debug.Log("Salut");
                     Button b = choice_buttons[i];
@@ -99,16 +100,18 @@ public class DialogManager : MonoBehaviour
 
     }
 
+    private bool shouldLoadNextScene = false;
+    private float timeSinceLastSentence = 0;
+
     void changeDialog()
     {
         if(next_dialog != null)
         {
+            timeSinceLastSentence = 0.0f;
             current_dialog = next_dialog;
             go_to_next = false;
-            if(current_dialog.next.Length == 0)
-                Gamemachine.instance.NextScene();
-
-            Debug.Log("COCOU");
+            if (current_dialog.next.Length == 0)
+                shouldLoadNextScene = true;
 
             RefreshCanvas();
         }
@@ -117,39 +120,46 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //has_success_story = Gamemachine.instance.isSuccessful;
+        has_success_story = Gamemachine.instance.isSuccessful;
         scene = Gamemachine.instance.GetData().scene;
         current_dialog = scene.root;
         RefreshCanvas();
+
+        StepData data = Gamemachine.instance.GetData();
+        if (data != null)
+        {
+            if (data.foreground == null) foreground.enabled = false;
+            else foreground.sprite = data.foreground;
+            background.sprite = data.background;
+        }
     }
 
     IEnumerator WriteText()
     {
         while (displayed_text.text != current_dialog.content)
-        { 
+        {
+            timeSinceLastSentence = 0.0f;
             displayed_text.text += current_dialog.content[current_pos++];
             yield return new WaitForSeconds((int)current_dialog.speed/(float)10.0f);
          }
     }
 
-    private bool hasEnded = false;
-
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetMouseButtonDown(0))
-            go_to_next = true;
-
+        timeSinceLastSentence += Time.deltaTime;
 
         if (displayed_text.text != current_dialog.content)
         {
             StartCoroutine(WriteText());
         }
-        else if(go_to_next)
+        else if(go_to_next || Input.GetMouseButtonDown(0))
         {
+            go_to_next = true;
             if (next_dialog != null)
                 changeDialog();
         }
+        if (shouldLoadNextScene && timeSinceLastSentence > 1.0f && Input.GetMouseButtonDown(0))
+            Gamemachine.instance.NextScene();
     }
 }

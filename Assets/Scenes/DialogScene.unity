@@ -210,6 +210,8 @@ MonoBehaviour:
   music: {fileID: 0}
   box_small: {fileID: 21300000, guid: ed81a2e3ec1cca2408ad2baba9092ad5, type: 3}
   box_large: {fileID: 21300000, guid: ad3d134c1e682c744a8a590fbab840b2, type: 3}
+  background: {fileID: 58351685}
+  foreground: {fileID: 1106462736}
   has_success_story: 0
 --- !u!114 &58351685
 MonoBehaviour:
