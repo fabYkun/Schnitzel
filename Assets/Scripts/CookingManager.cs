@@ -83,6 +83,11 @@ public class CookingManager : MonoBehaviour
 
     public bool CheckForVictory()
     {
+        bool nothingCooked = ((current_salty + current_spicy + current_sweet) == 0);
+        bool wantedNothing = ((goal_salty + goal_spicy + goal_sweet) == 0);
+        if (nothingCooked && wantedNothing) return true;
+        else if (nothingCooked) return false;
+
         int delta_sum =  Mathf.Abs(goal_salty - current_salty) + Mathf.Abs(goal_spicy - current_spicy) + Mathf.Abs(goal_sweet - current_sweet);
 
         Debug.Log("delta sum = " + delta_sum + " | goal = " + goal_delta + " | success = " + (delta_sum < goal_delta));
@@ -92,7 +97,6 @@ public class CookingManager : MonoBehaviour
     public void Serve()
     {
         Gamemachine.instance.NextScene(CheckForVictory());
-
     }
 
     public void Reset()

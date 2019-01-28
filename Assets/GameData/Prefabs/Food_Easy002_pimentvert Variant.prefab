@@ -67,32 +67,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 719664434195996691, guid: 970afe3592379944882873fab881b2b5,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7d3e1cb636778df42b5a08635f0c6d69,
-        type: 3}
-    - target: {fileID: 719664434195996716, guid: 970afe3592379944882873fab881b2b5,
-        type: 3}
-      propertyPath: spicy
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_Radius
-      value: 120
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 719664434195996717, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_Offset.y
       value: -257.65
       objectReference: {fileID: 0}
-    - target: {fileID: 719664433408700401, guid: 970afe3592379944882873fab881b2b5,
+    - target: {fileID: 719664434195996716, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 3287238986343253680}
+      propertyPath: spicy
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1724667900020652840, guid: 970afe3592379944882873fab881b2b5,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -119,18 +108,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 87c894bb6f870504b8e561545d885ccd,
         type: 3}
+    - target: {fileID: 719664434195996691, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d3e1cb636778df42b5a08635f0c6d69,
+        type: 3}
+    - target: {fileID: 719664433408700401, guid: 970afe3592379944882873fab881b2b5,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 719664434195996691, guid: 970afe3592379944882873fab881b2b5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 970afe3592379944882873fab881b2b5, type: 3}
---- !u!114 &3287238986343253680 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 719664433408700400, guid: 970afe3592379944882873fab881b2b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2621759690354256192}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

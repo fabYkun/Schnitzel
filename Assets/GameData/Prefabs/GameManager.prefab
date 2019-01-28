@@ -452,6 +452,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2882ebb8426f394b80c979057f65d2f, type: 2}
   - {fileID: 11400000, guid: 3d537496cc8e27e42bdded9c05fdc78c, type: 2}
   - {fileID: 11400000, guid: ace1fee6dd088b04e84174d081b6fbcd, type: 2}
+  goodEnding: {fileID: 11400000, guid: ace1fee6dd088b04e84174d081b6fbcd, type: 2}
+  neutralEnding: {fileID: 11400000, guid: 85b5f7bda76e1f94294dd59a344d1259, type: 2}
+  badEnding: {fileID: 11400000, guid: a0524dddf1edfb5448fee1c520aa0c37, type: 2}
   next_step: 0
   current_step: 0
   current_mode: 0
@@ -481,7 +484,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  audioClip: {fileID: 0}
   audioSource: {fileID: 1043331925}
   fireSound: {fileID: 8300000, guid: a616728cd2ddc0244b1bb1eda1b7b1bd, type: 3}
   dingdongSound: {fileID: 8300000, guid: b5c5098c800a60d43a630e6f0830f6d6, type: 3}
@@ -683,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.73333335, g: 0.13333334, b: 0.13333334, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -691,7 +693,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1f2cfd69c06c9a641a5357cd8453edeb, type: 3}
+    m_Font: {fileID: 12800000, guid: ccefec4537c9364418777d064c224ccc, type: 3}
     m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
