@@ -30,13 +30,15 @@ public enum GameCursors
 
 public class            Gamemachine : MonoBehaviour
 {
-    static int          max_days = (int)Thematics.NB_THEMATICS * 2;
-    public int[]        daily_scores = new int[max_days];
+    public List<int>    daily_scores;
     public int          current_day = -1;
     public bool         isSuccessful = false;
     private bool        loading = false;
 
     public List<StepData> steps = new List<StepData>();
+    public StepData     goodEnding;
+    public StepData     neutralEnding;
+    public StepData     badEnding;
     public int next_step = 0;
     public int current_step = 0;
     public Gamemodes current_mode = Gamemodes.PressStart;
@@ -48,7 +50,7 @@ public class            Gamemachine : MonoBehaviour
     [SerializeField]
     private AnimationCurve curve;
 
-    public AudioClip audioClip;
+    private AudioClip audioClip;
     public AudioSource audioSource;
 
     public AudioClip fireSound;
@@ -66,6 +68,11 @@ public class            Gamemachine : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             ChangeCursor(GameCursors.Neutral);
+            for (int i = 0; i < this.steps.Count; ++i)
+            {
+                if (this.steps[i].type == StepData.stepType.Cooking)
+                    daily_scores.Add(0);
+            }
         }
         else GameObject.Destroy(this.gameObject);
     }
@@ -156,9 +163,25 @@ public class            Gamemachine : MonoBehaviour
             isSuccessful = true;
         }
 
+        /* last scene */
+        if (next_step == steps.Count - 1)
+        {
+            int total_score = 0;
+            for (int i = 0; i < daily_scores.Count; ++i)
+            {
+                total_score += daily_scores[i];
+            }
+            if (total_score > 5)
+                steps[next_step] = goodEnding;
+            else if (total_score < 3)
+                steps[next_step] = badEnding;
+            else
+                steps[next_step] = neutralEnding;
+        }
         if (next_step >= steps.Count)
         {
             EndGame();
+            return;
         }
         else if (steps[next_step].type == StepData.stepType.Narration)
         {

@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af91da2ec3d4d0f48875848434cb1823, type: 3}
-  m_Name: S16
+  m_Name: S17_Failed
   m_EditorClassIdentifier: 
   thematic: 0
-  audioclip: {fileID: 8300000, guid: ab5bc0dae42cf2946a96d630787c806e, type: 3}
-  foreground: {fileID: 0}
-  background: {fileID: 0}
-  type: 0
+  audioclip: {fileID: 8300000, guid: cbfe57ddafbd1c84392df93c31daf372, type: 3}
+  foreground: {fileID: 21300000, guid: df2e41d8a8e98874fa3ca2869713c77d, type: 3}
+  background: {fileID: 21300000, guid: ebb1ef9068e83fe4ab16b00171e304e9, type: 3}
+  type: 1
   sweet: 0
   spicy: 0
   salty: 0
-  delta: 1
-  ingredientsPrefab: {fileID: 19863485936634291, guid: c7829c6478f571c40806b9be35515306,
-    type: 3}
-  scene: {fileID: 0}
+  delta: 0
+  ingredientsPrefab: {fileID: 0}
+  scene: {fileID: 11400000, guid: bfd0a7a3d0598b24d9936ac34f3576bf, type: 2}

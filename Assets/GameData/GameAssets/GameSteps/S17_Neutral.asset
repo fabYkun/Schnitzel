@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af91da2ec3d4d0f48875848434cb1823, type: 3}
-  m_Name: S17
+  m_Name: S17_Neutral
   m_EditorClassIdentifier: 
   thematic: 0
   audioclip: {fileID: 8300000, guid: cbfe57ddafbd1c84392df93c31daf372, type: 3}
