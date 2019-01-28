@@ -42,13 +42,10 @@ public class CookingManager : MonoBehaviour
         goal_spicy = data.spicy;
         goal_sweet = data.sweet;
 
-        current_salty = 0;
-        current_spicy = 0;
-        current_sweet = 0;
-
         if(data != null)
         {
-            ingredients_list = Instantiate(data.ingredientsPrefab);
+
+            Reset();
         }
             
         taste_effect.GetComponent<CanvasGroup>().alpha = 0;
@@ -100,9 +97,9 @@ public class CookingManager : MonoBehaviour
 
     public void Reset()
     {
-        //Destroy(ingredients_list);
-        //ingredients_list = Instantiate(data.ingredientsPrefab);
-        //ingredients_list.SetActive(true);
+        Destroy(ingredients_list);
+        ingredients_list = Instantiate(data.ingredientsPrefab);
+        ingredients_list.SetActive(true);
 
         current_spicy = 0;
         current_salty = 0;
