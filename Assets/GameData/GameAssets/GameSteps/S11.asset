@@ -20,7 +20,7 @@ MonoBehaviour:
   sweet: 5
   spicy: 7
   salty: 3
-  delta: 5
+  delta: 4
   ingredientsPrefab: {fileID: 6484142993421532889, guid: bc6c8d4238220a148a35296c2fb36f15,
     type: 3}
   scene: {fileID: 0}
