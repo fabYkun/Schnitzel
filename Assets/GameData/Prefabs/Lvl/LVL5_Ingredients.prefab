@@ -42,11 +42,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5954749515811238081}
     m_Modifications:
-    - target: {fileID: 4721218092832594688, guid: b1daed3b01f63cf42b11fd826563afde,
-        type: 3}
-      propertyPath: m_Name
-      value: Food_Medium013_pimentrouge Variant (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4721218092202531439, guid: b1daed3b01f63cf42b11fd826563afde,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 4721218092202531439, guid: b1daed3b01f63cf42b11fd826563afde,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 625
+      value: 690
       objectReference: {fileID: 0}
     - target: {fileID: 4721218092202531439, guid: b1daed3b01f63cf42b11fd826563afde,
         type: 3}
@@ -112,6 +107,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 4721218092832594688, guid: b1daed3b01f63cf42b11fd826563afde,
+        type: 3}
+      propertyPath: m_Name
+      value: Food_Medium013_pimentrouge Variant (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1daed3b01f63cf42b11fd826563afde, type: 3}
 --- !u!4 &7611666069444148131 stripped
@@ -127,11 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5954749515811238081}
     m_Modifications:
-    - target: {fileID: 1218138006737924678, guid: a9108492a2397c8408df4697ed1f430a,
-        type: 3}
-      propertyPath: m_Name
-      value: Food_Easy020_oignon Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 1218138007988220713, guid: a9108492a2397c8408df4697ed1f430a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -140,7 +135,7 @@ PrefabInstance:
     - target: {fileID: 1218138007988220713, guid: a9108492a2397c8408df4697ed1f430a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 606
+      value: 684
       objectReference: {fileID: 0}
     - target: {fileID: 1218138007988220713, guid: a9108492a2397c8408df4697ed1f430a,
         type: 3}
@@ -197,6 +192,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 1218138006737924678, guid: a9108492a2397c8408df4697ed1f430a,
+        type: 3}
+      propertyPath: m_Name
+      value: Food_Easy020_oignon Variant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9108492a2397c8408df4697ed1f430a, type: 3}
 --- !u!4 &2797107399272084863 stripped
@@ -212,11 +212,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5954749515811238081}
     m_Modifications:
-    - target: {fileID: 4721218092832594688, guid: b1daed3b01f63cf42b11fd826563afde,
-        type: 3}
-      propertyPath: m_Name
-      value: Food_Medium013_pimentrouge Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 4721218092202531439, guid: b1daed3b01f63cf42b11fd826563afde,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,7 +220,7 @@ PrefabInstance:
     - target: {fileID: 4721218092202531439, guid: b1daed3b01f63cf42b11fd826563afde,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 630
+      value: 683
       objectReference: {fileID: 0}
     - target: {fileID: 4721218092202531439, guid: b1daed3b01f63cf42b11fd826563afde,
         type: 3}
@@ -282,6 +277,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 4721218092832594688, guid: b1daed3b01f63cf42b11fd826563afde,
+        type: 3}
+      propertyPath: m_Name
+      value: Food_Medium013_pimentrouge Variant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1daed3b01f63cf42b11fd826563afde, type: 3}
 --- !u!4 &8983951962339816706 stripped
@@ -297,11 +297,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5954749515811238081}
     m_Modifications:
-    - target: {fileID: 1218138006737924678, guid: a9108492a2397c8408df4697ed1f430a,
-        type: 3}
-      propertyPath: m_Name
-      value: Food_Easy020_oignon Variant (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1218138007988220713, guid: a9108492a2397c8408df4697ed1f430a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -310,7 +305,7 @@ PrefabInstance:
     - target: {fileID: 1218138007988220713, guid: a9108492a2397c8408df4697ed1f430a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 625
+      value: 703
       objectReference: {fileID: 0}
     - target: {fileID: 1218138007988220713, guid: a9108492a2397c8408df4697ed1f430a,
         type: 3}
@@ -367,6 +362,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 1218138006737924678, guid: a9108492a2397c8408df4697ed1f430a,
+        type: 3}
+      propertyPath: m_Name
+      value: Food_Easy020_oignon Variant (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9108492a2397c8408df4697ed1f430a, type: 3}
 --- !u!4 &8812390171046043145 stripped
@@ -382,11 +382,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5954749515811238081}
     m_Modifications:
-    - target: {fileID: 7689255655355570369, guid: d3696753c63b0e843a48b1e59a2347ac,
-        type: 3}
-      propertyPath: m_Name
-      value: Food_Easy010_oeuf Variant (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 7689255654106585518, guid: d3696753c63b0e843a48b1e59a2347ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -395,7 +390,7 @@ PrefabInstance:
     - target: {fileID: 7689255654106585518, guid: d3696753c63b0e843a48b1e59a2347ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79
+      value: 157
       objectReference: {fileID: 0}
     - target: {fileID: 7689255654106585518, guid: d3696753c63b0e843a48b1e59a2347ac,
         type: 3}
@@ -451,6 +446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689255655355570369, guid: d3696753c63b0e843a48b1e59a2347ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Food_Easy010_oeuf Variant (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3696753c63b0e843a48b1e59a2347ac, type: 3}
