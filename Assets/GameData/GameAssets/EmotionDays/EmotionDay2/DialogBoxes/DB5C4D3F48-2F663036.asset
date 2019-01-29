@@ -15,14 +15,12 @@ MonoBehaviour:
   id: 5C4D3F48-2F663036
   speaker: 1
   content: 'I''m sure you''ll feel better soon. Today might have been hard but think
-    of it this way : you never have to do today again. Tomorrow might be better or
-    it might suck but at least you never have to live through today again.'
+    of it this way : you never have to do today again. This day is over.'
   emotion: 0
   speed: 2
   content_lang:
   - 'I''m sure you''ll feel better soon. Today might have been hard but think of it
-    this way : you never have to do today again. Tomorrow might be better or it might
-    suck but at least you never have to live through today again.'
+    this way : you never have to do today again. This day is over.'
   - 
   - 
   - 
@@ -31,5 +29,5 @@ MonoBehaviour:
     successStory: 0
     dialogBox: {fileID: 11400000, guid: dd4ee5d4d2f026f4cbb9eedc9b95c888, type: 2}
     reward: 0
-  x: 1397
-  y: 240
+  x: 705
+  y: 259
