@@ -25,7 +25,7 @@ MonoBehaviour:
   - 
   - 
   next:
-  - name: Where did you like to hang out with your friends before?
+  - name: What did you use to do?
     successStory: 0
     dialogBox: {fileID: 11400000, guid: 44ab4604fce336e42bf6da6d1581deee, type: 2}
     reward: 0
@@ -33,5 +33,5 @@ MonoBehaviour:
     successStory: 0
     dialogBox: {fileID: 11400000, guid: 48f69b624aa13f240a6bf534fe530dd8, type: 2}
     reward: 0
-  x: -274
-  y: 209
+  x: 159
+  y: 140

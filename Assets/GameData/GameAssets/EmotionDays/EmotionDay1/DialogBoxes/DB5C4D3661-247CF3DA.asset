@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5C4D3661-247CF3DA
   speaker: 0
-  content: I feel like I'm a burden on everyone.How can I feel better?
+  content: I feel like I'm a burden on everyone. How can I feel better?
   emotion: 5
   speed: 2
   content_lang:
-  - I feel like I'm a burden on everyone.How can I feel better?
+  - I feel like I'm a burden on everyone. How can I feel better?
   - 
   - 
   - 
@@ -27,5 +27,5 @@ MonoBehaviour:
     successStory: 0
     dialogBox: {fileID: 11400000, guid: b5d0636c0e83e1d4fb6a971c7e845f63, type: 2}
     reward: 0
-  x: 1163
-  y: 157
+  x: 667
+  y: 139

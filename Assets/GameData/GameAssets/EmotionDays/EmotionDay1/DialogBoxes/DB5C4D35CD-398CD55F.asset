@@ -27,5 +27,5 @@ MonoBehaviour:
     successStory: 0
     dialogBox: {fileID: 11400000, guid: f31ac701f0b1258408f998135bb2d5d8, type: 2}
     reward: 0
-  x: 623
-  y: 41
+  x: 127
+  y: 23
